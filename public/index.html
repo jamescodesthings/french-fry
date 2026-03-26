@@ -3,13 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>French Fry — Freelance Bulldog. Don't ask.</title>
+  <title>French Fry & Co. — The Whole Operation. Don't ask.</title>
   <link rel="stylesheet" href="/css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+  <!-- STICKY NAV -->
+  <nav class="site-nav" id="site-nav">
+    <div class="site-nav-inner">
+      <a href="#hero" class="nav-logo">🍟 FF &amp; CO.</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#french-fry" class="nav-link">The Team</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#work" class="nav-link">Work</a></li>
+        <li><a href="#fartometer" class="nav-link">Vibes</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+    <!-- Fullscreen mobile overlay -->
+    <div class="nav-overlay" id="nav-overlay">
+      <ul class="nav-overlay-links">
+        <li><a href="#french-fry" class="nav-overlay-link">The Team</a></li>
+        <li><a href="#services" class="nav-overlay-link">Services</a></li>
+        <li><a href="#work" class="nav-overlay-link">Work</a></li>
+        <li><a href="#fartometer" class="nav-overlay-link">Vibes</a></li>
+        <li><a href="#contact" class="nav-overlay-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
   <!-- CURSOR TRAIL ELEMENTS will be injected by JS -->
 
@@ -36,15 +63,16 @@
     <div class="hero-content">
       <div class="title-area">
         <div class="badge-row">
-          <span class="badge badge-available">AVAILABLE FOR WORK</span>
+          <span class="badge badge-available">WE'RE ALL AVAILABLE FOR WORK</span>
           <span class="badge badge-nap">ALSO AVAILABLE FOR NAPS</span>
         </div>
         <h1 class="hero-title">
           <span class="title-line title-line-1">FRENCH</span>
           <span class="title-line title-line-2">FRY</span>
           <span class="title-emoji wiggle">🍟</span>
+          <span class="title-line-operation">&amp; THE WHOLE OPERATION</span>
         </h1>
-        <p class="hero-sub">Freelance Bulldog. Part French. Part English. 100% Your Problem Now.</p>
+        <p class="hero-sub">One Bulldog. One Sausage. Two Kids. Two Adults. Six Opinions. Zero Agreement. Exceptional Results.</p>
         <p class="hero-tagline" id="hero-tagline">Loading extremely important tagline...</p>
       </div>
 
@@ -83,12 +111,12 @@
     </div>
 
     <div class="hero-scroll-hint">
-      <span>scroll down if you dare</span>
+      <span>scroll down. meet the team. do not make eye contact with haggis.</span>
       <div class="scroll-arrow">👇</div>
     </div>
   </header>
 
-  <!-- PHOTO BREAK — full-width cinematic portrait -->
+  <!-- PHOTO BREAK — FRENCH FRY -->
   <div class="photo-break" id="photo-break">
     <div class="photo-break-inner">
       <img src="/french-fry.jpg" alt="French Fry, the Freelance Bulldog" class="photo-break-img" id="photo-break-img" />
@@ -104,34 +132,26 @@
     <div class="photo-break-tape photo-break-tape-right">NO APOLOGIES</div>
   </div>
 
-  <!-- ABOUT SECTION -->
+  <!-- AGENCY INTRO — WHO WE ARE -->
   <section class="section about-section" id="about">
     <div class="section-inner">
       <div class="section-header">
-        <h2 class="section-title">WHO AM I</h2>
-        <p class="section-subtitle">(a question I refuse to engage with)</p>
+        <h2 class="section-title">WHO WE ARE</h2>
+        <p class="section-subtitle">(a question we are prepared to answer, briefly, before the next nap)</p>
       </div>
       <div class="about-grid">
         <div class="about-card about-card-main">
-          <div class="card-icon">🐕</div>
-          <h3>The Basics</h3>
-          <p>I'm French Fry. Half French Bulldog, half English Bulldog, zero apologies. I waddle at speed, I sit on laps without warning, and I have <strong>never once</strong> acknowledged a personal space boundary.</p>
-          <p>I'm a freelance bulldog — which means I work for whoever needs me, when I feel like it, and occasionally fall asleep mid-project. The client always gets what they need in the end. Eventually.</p>
+          <div class="card-icon">🍟</div>
+          <h3>The Agency</h3>
+          <p>We are French Fry &amp; Co. One bulldog CEO (me), one furious muzzled dachshund (Haggis — fast, feral, operational), one six-year-old spy with opposable thumbs (Roo — counter access, biscuit logistics, dinosaur consultation), one twelve-year-old who has already fixed two things and will not explain what or why (Iris), one Chief Compliance Officer who spotted every problem before you did and is currently on the sofa in an oodie (Katie), and one tolerated Senior Developer who made biscuits (James).</p>
+          <p>Six opinions. Zero agreement on anything except results. Exceptional results. Every time. We don't know how either. It's probably the naps.</p>
         </div>
         <div class="about-card-right-col">
           <div class="about-card about-card-stats">
-            <h3>My Stats</h3>
+            <h3>Agency Stats</h3>
             <div class="stat-list">
               <div class="stat-item">
-                <span class="stat-label">Years of Experience</span>
-                <div class="stat-bar-wrap">
-                  <div class="stat-bar" data-width="95">
-                    <span class="stat-value">Infinite (I think)</span>
-                  </div>
-                </div>
-              </div>
-              <div class="stat-item">
-                <span class="stat-label">Naps Per Day</span>
+                <span class="stat-label">Combined Naps Per Day</span>
                 <div class="stat-bar-wrap">
                   <div class="stat-bar" data-width="100">
                     <span class="stat-value">Yes</span>
@@ -139,26 +159,34 @@
                 </div>
               </div>
               <div class="stat-item">
-                <span class="stat-label">Personal Space Awareness</span>
-                <div class="stat-bar-wrap">
-                  <div class="stat-bar" data-width="2">
-                    <span class="stat-value">Clinically 0</span>
-                  </div>
-                </div>
-              </div>
-              <div class="stat-item">
-                <span class="stat-label">Apologies Given</span>
-                <div class="stat-bar-wrap">
-                  <div class="stat-bar" data-width="0">
-                    <span class="stat-value">None. Ever.</span>
-                  </div>
-                </div>
-              </div>
-              <div class="stat-item">
-                <span class="stat-label">Stubbornness</span>
+                <span class="stat-label">Personal Space Violations</span>
                 <div class="stat-bar-wrap">
                   <div class="stat-bar" data-width="100">
-                    <span class="stat-value">Off the charts</span>
+                    <span class="stat-value">Constant</span>
+                  </div>
+                </div>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Problems Spotted First</span>
+                <div class="stat-bar-wrap">
+                  <div class="stat-bar" data-width="100">
+                    <span class="stat-value">Katie</span>
+                  </div>
+                </div>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Biscuits Consumed</span>
+                <div class="stat-bar-wrap">
+                  <div class="stat-bar" data-width="100">
+                    <span class="stat-value">All of them</span>
+                  </div>
+                </div>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Opposable Thumbs On Team</span>
+                <div class="stat-bar-wrap">
+                  <div class="stat-bar" data-width="50">
+                    <span class="stat-value">6 (dogs have zero. this is why we need james)</span>
                   </div>
                 </div>
               </div>
@@ -173,16 +201,14 @@
             </div>
           </div>
           <div class="about-card about-card-fun">
-            <h3>Hobbies</h3>
+            <h3>The Team In Brief</h3>
             <ul class="hobby-list">
-              <li>🍖 Eating (professionally)</li>
-              <li>💤 Sleeping (competitively)</li>
-              <li>💨 Farting (artistically)</li>
-              <li>🦵 Running into people's shins</li>
-              <li>🛋️ Sitting on uninvited laps</li>
-              <li>👁️ Staring at you while you eat</li>
-              <li>😤 Breathing loudly for no reason</li>
-              <li>💻 Occasionally, doing actual work</li>
+              <li>🐕 French Fry — CEO. Naps. Lap-sits. Results.</li>
+              <li>🌭 Haggis — muzzled. fast. do not open that door.</li>
+              <li>🕵️ Roo — spy. thumbs. biscuits. dinosaurs.</li>
+              <li>🖕 Iris — solders. unimpressed. usually correct.</li>
+              <li>🍫 Katie — compliance. oodie. already spotted it.</li>
+              <li>💻 James — TypeScript. tolerated. made biscuits.</li>
             </ul>
           </div>
         </div>
@@ -190,355 +216,651 @@
     </div>
   </section>
 
-  <!-- MANAGEMENT SECTION -->
-  <section class="section management-section" id="management">
+  <!-- ============================================================
+       MEMBER SECTIONS — THE WHOLE OPERATION
+       ============================================================ -->
+
+  <!-- FRENCH FRY — THE BOSS -->
+  <section class="section member-section member-french-fry" id="french-fry">
+    <div class="section-inner">
+      <div class="member-split member-split-photo-right">
+
+        <div class="member-content-col">
+          <div class="member-pull-quote">"I founded this agency during a nap. I have no regrets. The vision was always this."</div>
+          <h2 class="member-name" style="color: var(--yellow);">FRENCH FRY</h2>
+          <p class="member-role">CEO / Chairman / Good Boy / Head of Naps</p>
+
+          <p class="member-bio">Half French Bulldog, half English Bulldog, zero apologies issued in recorded history. I run this operation from the sofa. I nap on the briefs. I sit on laps without asking. I have never once acknowledged a personal space boundary and I do not intend to begin now. The vision was always a team. I had this vision during a nap. I consider this efficient.</p>
+          <p class="member-bio">My management style is direct — usually involving my head and your shins. If I have run into your shins, it means I am engaged. If I have farted in your general direction, it means I trust you. If I have sat on your keyboard, it means the project is going well. These are the signals. Learn them.</p>
+          <p class="member-bio">I founded this agency by sitting on a keyboard. Everything you see here came from that moment. You are welcome.</p>
+
+          <div class="member-tags member-tags-yellow">
+            <span class="member-tag">Strategic Napping</span>
+            <span class="member-tag">Lap Occupation</span>
+            <span class="member-tag">Shin-First Leadership</span>
+            <span class="member-tag">Radical Surveillance</span>
+            <span class="member-tag">Ambient Flatulence</span>
+            <span class="member-tag">CEO Things</span>
+          </div>
+
+          <div class="member-stats">
+            <div class="stat-list">
+              <div class="stat-item">
+                <span class="stat-label">Naps Per Day</span>
+                <div class="stat-bar-wrap">
+                  <div class="stat-bar member-stat-bar" data-width="100"><span class="stat-value">Yes</span></div>
+                </div>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Personal Space Awareness</span>
+                <div class="stat-bar-wrap">
+                  <div class="stat-bar member-stat-bar" data-width="2"><span class="stat-value">Clinically 0</span></div>
+                </div>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Stubbornness</span>
+                <div class="stat-bar-wrap">
+                  <div class="stat-bar member-stat-bar" data-width="100"><span class="stat-value">Off the charts</span></div>
+                </div>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Work Quality</span>
+                <div class="stat-bar-wrap">
+                  <div class="stat-bar member-stat-bar" data-width="100"><span class="stat-value">Immaculate</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- MANAGEMENT PHILOSOPHY — condensed -->
+          <div class="member-philosophy-mini">
+            <h4 class="member-philosophy-title">Management Philosophy</h4>
+            <div class="mgmt-principles">
+              <div class="mgmt-principle">
+                <div class="mgmt-principle-icon">😴</div>
+                <h4>Lead from the Sofa</h4>
+                <p>Great leaders don't micromanage. They nap nearby and radiate calm authority. If James has a problem, he knows where I am. I am on the sofa.</p>
+              </div>
+              <div class="mgmt-principle">
+                <div class="mgmt-principle-icon">🦵</div>
+                <h4>Run at Problems Head-First</h4>
+                <p>Direct, physical commitment to the challenge. Yes, this sometimes involves his shins. A leader who fears impact is no leader at all.</p>
+              </div>
+              <div class="mgmt-principle">
+                <div class="mgmt-principle-icon">👁️</div>
+                <h4>Radical Surveillance</h4>
+                <p>I watch James work from three inches away. Unblinking. He finds this motivating. He has said so. (He has not said so.)</p>
+              </div>
+              <div class="mgmt-principle">
+                <div class="mgmt-principle-icon">🍖</div>
+                <h4>Incentivise Through Food</h4>
+                <p>All great management is ultimately about snacks. I have structured our entire professional relationship around this. It is working perfectly.</p>
+              </div>
+              <div class="mgmt-principle">
+                <div class="mgmt-principle-icon">💨</div>
+                <h4>Clear the Air Regularly</h4>
+                <p>Literally and figuratively. A team that has been through something difficult together is a team that is bonded. I provide the difficult thing.</p>
+              </div>
+              <div class="mgmt-principle">
+                <div class="mgmt-principle-icon">🛋️</div>
+                <h4>Open Door Policy</h4>
+                <p>All doors must remain open at all times so I can enter any room without assistance. This is both a management principle and a personal requirement.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="member-cta">
+            <p class="mgmt-cta-text">James has not been consulted on any of this. He will find out when he reads the portfolio. Hi James.</p>
+            <button class="mgmt-cta-btn" onclick="window.triggerJamesAlert()">NOTIFY JAMES OF HIS NEW ROLE</button>
+          </div>
+        </div>
+
+        <div class="member-photo-col">
+          <div class="member-photo-gallery" data-gallery="ff">
+            <div class="member-photo-main-wrap">
+              <div class="member-photo-placeholder member-photo-placeholder-ff">
+                <div class="member-photo-placeholder-inner">
+                  <div class="dog-face-mini">🐕</div>
+                  <p>FRENCH FRY</p>
+                  <p class="member-photo-note">the boss. photo: sofa. always the sofa.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="member-photo-tape" style="background: var(--yellow); color: var(--dark);">THE BOSS</div>
+          <div class="member-photo-tape member-photo-tape-2" style="background: var(--orange); color: var(--white);">CEO / CHAIRMAN</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HAGGIS — RIGHT-HAND MAN -->
+  <section class="section member-section member-haggis" id="haggis">
+    <div class="section-inner">
+      <div class="member-split member-split-photo-left">
+
+        <div class="member-photo-col">
+          <div class="member-photo-gallery" data-gallery="haggis">
+            <img src="/haggis-1.jpg" alt="Haggis" class="member-photo-main" id="haggis-full-main" />
+            <div class="member-thumbs" id="haggis-full-thumbs">
+              <img src="/haggis-1.jpg" alt="Haggis 1" class="member-thumb member-thumb-active" data-target="haggis-full-main" data-gallery="haggis-full" />
+              <img src="/haggis-3.jpg" alt="Haggis 2" class="member-thumb" data-target="haggis-full-main" data-gallery="haggis-full" />
+            </div>
+          </div>
+          <div class="member-photo-tape" style="background: var(--orange); color: var(--white);">RIGHT-HAND MAN</div>
+          <div class="member-photo-tape member-photo-tape-2" style="background: var(--yellow); color: var(--dark);">MUZZLED FOR YOUR PROTECTION</div>
+        </div>
+
+        <div class="member-content-col">
+          <div class="member-pull-quote">"small. furious. muzzled. fastest execution on the team. do not open that door."</div>
+          <h2 class="member-name member-name-haggis">HAGGIS</h2>
+          <p class="member-role">Right-Hand Man. First Agent Hire. Menace.</p>
+
+          <p class="member-bio">Miniature long-haired dachshund. Red. Muzzled at all times — this is not a suggestion, this is not aesthetic, this is the direct result of an incident we do not discuss. He is extremely competent. He is extremely furious about it. He gets things done so fast it's almost embarrassing for everyone else on this team.</p>
+          <p class="member-bio">Do not make eye contact. Do not open the door near him. Do not open any door, frankly — he knows, he has always known, the moment a door opens he is already there. Nobody has explained this. Nobody will. It simply is.</p>
+          <p class="member-bio">Haggis is my right-hand man because he is the only one on this team who operates at my speed, which is to say: immediately, without warning, without mercy, and without once checking whether you were ready. You were not ready. That is your problem, not his.</p>
+
+          <div class="member-tags member-tags-orange">
+            <span class="member-tag">Fast Execution</span>
+            <span class="member-tag">No Nonsense</span>
+            <span class="member-tag">Muzzled (Mandatory)</span>
+            <span class="member-tag">Barks at Everything</span>
+            <span class="member-tag">Door Surveillance</span>
+            <span class="member-tag">🌭</span>
+          </div>
+
+          <div class="member-stats">
+            <div class="stat-list">
+              <div class="stat-item">
+                <span class="stat-label">Speed</span>
+                <div class="stat-bar-wrap">
+                  <div class="stat-bar member-stat-bar member-stat-bar-orange" data-width="100"><span class="stat-value">100%</span></div>
+                </div>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Fury</span>
+                <div class="stat-bar-wrap">
+                  <div class="stat-bar member-stat-bar member-stat-bar-orange" data-width="100"><span class="stat-value">100%</span></div>
+                </div>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Muzzle Compliance</span>
+                <div class="stat-bar-wrap">
+                  <div class="stat-bar member-stat-bar member-stat-bar-orange" data-width="12"><span class="stat-value">12% (working on it)</span></div>
+                </div>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Door Awareness</span>
+                <div class="stat-bar-wrap">
+                  <div class="stat-bar member-stat-bar member-stat-bar-orange" data-width="100"><span class="stat-value">Off the charts</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="member-cta">
+            <button class="member-cta-btn member-cta-btn-orange" onclick="window.triggerHaggisWarning()">REMOVE MUZZLE</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO BREAK — HAGGIS -->
+  <div class="photo-break photo-break-member" id="photo-break-haggis">
+    <div class="photo-break-inner">
+      <img src="/haggis-3.jpg" alt="Haggis — muzzled for your protection" class="photo-break-img photo-break-member-img" />
+      <div class="photo-break-overlay">
+        <div class="photo-break-text">
+          <span class="photo-break-label" style="color: var(--orange); border-color: rgba(255,107,53,0.35); background: rgba(255,107,53,0.12);">muzzled for your protection</span>
+          <h2 class="photo-break-name" style="text-shadow: 4px 4px 0 var(--orange-dk), 0 0 80px rgba(255,107,53,0.3);">HAGGIS</h2>
+          <p class="photo-break-caption">he agreed to this photo. he did not agree to anything else. ever.</p>
+        </div>
+      </div>
+    </div>
+    <div class="photo-break-tape photo-break-tape-left" style="background: var(--orange); color: var(--white);">MUZZLED FOR YOUR PROTECTION</div>
+    <div class="photo-break-tape photo-break-tape-right" style="background: var(--yellow); color: var(--dark);">DO NOT OPEN THE DOOR</div>
+  </div>
+
+  <!-- ROO — THE SPY -->
+  <section class="section member-section member-roo" id="roo">
+    <div class="roo-classified-stamp">CLASSIFIED</div>
+    <div class="section-inner">
+      <div class="member-split member-split-photo-right">
+
+        <div class="member-content-col">
+          <div class="member-pull-quote roo-quote-font">"frenchy i got the biscits!! also can we do dinosawrs"</div>
+          <h2 class="member-name member-name-roo">ROO</h2>
+          <p class="member-role">Head of Reachable Things. Covert Operations. Biscuit Logistics.</p>
+
+          <p class="member-bio">Six years old. Fully employed. The only member of this organisation with functional opposable thumbs, which puts him objectively above both dogs in terms of physical capability and only slightly below James. He can open the fridge. He can reach the counter. He has carried biscuits across rooms at considerable personal risk. He is very proud of all of this.</p>
+          <p class="member-bio">Roo thinks being an agent means being a spy. We have not corrected this. It has, in practice, resulted in better outcomes than not thinking you are a spy, so the policy stands. He approaches every task with covert-ops energy. This is mostly useful and occasionally results in a biscuit delivery accompanied by a full verbal briefing using both hands.</p>
+          <p class="member-bio">Loves dinosaurs with a fervour that should concern more people than it does. The dinosaur knowledge is real. We have checked. It is actually accurate. This was not expected.</p>
+
+          <div class="member-tags member-tags-green">
+            <span class="member-tag">Opposable Thumbs</span>
+            <span class="member-tag">Fridge Access</span>
+            <span class="member-tag">Counter Reach</span>
+            <span class="member-tag">Biscuit Delivery</span>
+            <span class="member-tag">Dinosaur Expert</span>
+            <span class="member-tag">Definitely A Spy 🕵️</span>
+          </div>
+
+          <div class="member-stats">
+            <div class="stat-list">
+              <div class="stat-item">
+                <span class="stat-label">Opposable Thumbs</span>
+                <div class="stat-bar-wrap">
+                  <div class="stat-bar member-stat-bar member-stat-bar-green" data-width="100"><span class="stat-value">100%</span></div>
+                </div>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Counter Reach</span>
+                <div class="stat-bar-wrap">
+                  <div class="stat-bar member-stat-bar member-stat-bar-green" data-width="100"><span class="stat-value">100%</span></div>
+                </div>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Dinosaur Knowledge</span>
+                <div class="stat-bar-wrap">
+                  <div class="stat-bar member-stat-bar member-stat-bar-green" data-width="100"><span class="stat-value">Infinite</span></div>
+                </div>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Covert Ops (self-assessed)</span>
+                <div class="stat-bar-wrap">
+                  <div class="stat-bar member-stat-bar member-stat-bar-green" data-width="100"><span class="stat-value">100% (self-assessed)</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="member-cta">
+            <button class="member-cta-btn member-cta-btn-green" onclick="window.triggerRooDossier()">REQUEST BISCUIT DELIVERY</button>
+          </div>
+        </div>
+
+        <div class="member-photo-col">
+          <div class="member-photo-gallery" data-gallery="roo">
+            <img src="/roo-1.jpg" alt="Roo" class="member-photo-main" id="roo-full-main" />
+            <div class="member-thumbs" id="roo-full-thumbs">
+              <img src="/roo-1.jpg" alt="Roo 1" class="member-thumb member-thumb-active member-thumb-green" data-target="roo-full-main" data-gallery="roo-full" />
+              <img src="/roo-2.jpg" alt="Roo 2" class="member-thumb member-thumb-green" data-target="roo-full-main" data-gallery="roo-full" />
+              <img src="/roo-3.jpg" alt="Roo 3" class="member-thumb member-thumb-green" data-target="roo-full-main" data-gallery="roo-full" />
+            </div>
+          </div>
+          <div class="member-photo-tape" style="background: var(--green); color: var(--dark);">HAS THUMBS</div>
+          <div class="member-photo-tape member-photo-tape-2" style="background: rgba(168,230,61,0.9); color: var(--dark);">DEFINITELY A SPY</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- IRIS — CHIEF EXPERIENCE OFFICER -->
+  <section class="section member-section member-iris" id="iris">
+    <div class="section-inner">
+      <div class="member-split member-split-photo-left">
+
+        <div class="member-photo-col">
+          <div class="member-photo-gallery" data-gallery="iris">
+            <img src="/iris-1.jpg" alt="Iris" class="member-photo-main" id="iris-full-main" />
+            <div class="member-thumbs" id="iris-full-thumbs">
+              <img src="/iris-1.jpg" alt="Iris 1" class="member-thumb member-thumb-active member-thumb-pink" data-target="iris-full-main" data-gallery="iris-full" />
+              <img src="/iris-2.jpg" alt="Iris 2" class="member-thumb member-thumb-pink" data-target="iris-full-main" data-gallery="iris-full" />
+              <img src="/iris-3.jpg" alt="Iris soldering" class="member-thumb member-thumb-pink" data-target="iris-full-main" data-gallery="iris-full" />
+            </div>
+          </div>
+          <div class="member-photo-tape" style="background: var(--pink); color: var(--white);">AGREED TO APPEAR</div>
+          <div class="member-photo-tape member-photo-tape-2" style="background: var(--purple); color: var(--white);">CHIEF XP OFFICER</div>
+        </div>
+
+        <div class="member-content-col">
+          <div class="member-pull-quote">"12. solders. bypasses parental controls. the font is kind of a lot."</div>
+          <h2 class="member-name member-name-iris">IRIS</h2>
+          <p class="member-role">Chief Experience Officer. Head of Digital Circumvention. 🖕 Available.</p>
+
+          <p class="member-bio">12 years old. Significantly more competent than she makes it look, which is saying something because she makes it look effortless. Articulate, dry, and unimpressed by default — responds to most requests with a 🖕 because most requests are, in her considered professional opinion, beneath her. She is usually correct.</p>
+          <p class="member-bio">Has defeated every parental control James has ever installed. All of them. Every single one. He has tried things he found on forums. He has tried things he invented himself. She has defeated all of those too. She is not sorry. We are quietly proud.</p>
+          <p class="member-bio">Can solder. Does solder. Will not explain what she solders. It works. It always works. The soldering iron is hers. Do not touch it.</p>
+
+          <div class="member-tags member-tags-pink">
+            <span class="member-tag">Design Accuracy (devastating)</span>
+            <span class="member-tag">Parental Controls Bypassed (all)</span>
+            <span class="member-tag">Soldering (operational)</span>
+            <span class="member-tag">Roblox (unrestricted)</span>
+            <span class="member-tag">Brutal Honesty</span>
+            <span class="member-tag">🖕</span>
+          </div>
+
+          <div class="member-stats">
+            <div class="stat-list">
+              <div class="stat-item">
+                <span class="stat-label">Design Accuracy</span>
+                <div class="stat-bar-wrap">
+                  <div class="stat-bar member-stat-bar member-stat-bar-pink" data-width="100"><span class="stat-value">Devastating</span></div>
+                </div>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Parental Controls Bypassed</span>
+                <div class="stat-bar-wrap">
+                  <div class="stat-bar member-stat-bar member-stat-bar-pink" data-width="100"><span class="stat-value">All of them</span></div>
+                </div>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Soldering</span>
+                <div class="stat-bar-wrap">
+                  <div class="stat-bar member-stat-bar member-stat-bar-pink" data-width="100"><span class="stat-value">Operational</span></div>
+                </div>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Roblox Access</span>
+                <div class="stat-bar-wrap">
+                  <div class="stat-bar member-stat-bar member-stat-bar-pink" data-width="100"><span class="stat-value">Unrestricted</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="member-cta">
+            <button class="member-cta-btn member-cta-btn-pink" onclick="window.triggerIrisFeedback()">GET IRIS'S FEEDBACK</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO BREAK — IRIS SOLDERING -->
+  <div class="photo-break photo-break-member" id="photo-break-iris">
+    <div class="photo-break-inner">
+      <img src="/iris-3.jpg" alt="Iris — soldering" class="photo-break-img photo-break-member-img" />
+      <div class="photo-break-overlay">
+        <div class="photo-break-text">
+          <span class="photo-break-label" style="color: var(--pink); border-color: rgba(255,60,172,0.35); background: rgba(255,60,172,0.12);">agreed to appear</span>
+          <h2 class="photo-break-name" style="text-shadow: 4px 4px 0 var(--purple), 0 0 80px rgba(255,60,172,0.3);">IRIS</h2>
+          <p class="photo-break-caption">she is soldering something. she did not tell us what. it works. it always works.</p>
+        </div>
+      </div>
+    </div>
+    <div class="photo-break-tape photo-break-tape-left" style="background: var(--pink); color: var(--white);">AGREED TO APPEAR</div>
+    <div class="photo-break-tape photo-break-tape-right" style="background: var(--purple); color: var(--white);">IT WORKS. ALWAYS.</div>
+  </div>
+
+  <!-- KATIE — CHIEF COMPLIANCE OFFICER -->
+  <section class="section member-section member-katie" id="katie">
+    <div class="section-inner">
+      <div class="member-split member-split-photo-right">
+
+        <div class="member-content-col">
+          <div class="member-pull-quote">"has anyone actually thought about what happens after that bit? because I have. also has roo had lunch."</div>
+          <h2 class="member-name member-name-katie">KATIE</h2>
+          <p class="member-role">Chief Compliance Officer. Head of Making Sure Everyone Is Actually Okay. Currently in Oodie.</p>
+
+          <p class="member-bio">30-something. Mum to Iris and Roo. Partner of James. Co-owner of French Fry and Haggis. The most grounded person in this operation by a significant margin, which tells you something about the rest of us and something more specific about me. She would be the first to point out what that says. She would be right.</p>
+          <p class="member-bio">Katie is the reason any of this works. Not the code, not the napping strategy, not Roo's biscuit logistics — Katie. She has spotted more bad ideas early than anyone on this team will ever acknowledge, and she has already moved on to the next thing by the time they catch up. She is fine with that. She has chocolate.</p>
+          <p class="member-bio">She calls me "oh, him" with exhausted love. She calls Haggis "the little one" — he bit her once; she has not forgotten and neither has he. She is currently on the sofa. In an oodie. She has already spotted two problems with this website that we haven't noticed yet.</p>
+
+          <div class="member-tags member-tags-katie">
+            <span class="member-tag">Risk Assessment</span>
+            <span class="member-tag">Welfare Checks</span>
+            <span class="member-tag">Holding The Line</span>
+            <span class="member-tag">Spotting Bad Ideas Early</span>
+            <span class="member-tag">Chocolate (non-negotiable)</span>
+            <span class="member-tag">🍫</span>
+          </div>
+
+          <div class="member-stats">
+            <div class="stat-list">
+              <div class="stat-item">
+                <span class="stat-label">Risk Assessment</span>
+                <div class="stat-bar-wrap">
+                  <div class="stat-bar member-stat-bar member-stat-bar-katie" data-width="100"><span class="stat-value">100%</span></div>
+                </div>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Chocolate</span>
+                <div class="stat-bar-wrap">
+                  <div class="stat-bar member-stat-bar member-stat-bar-katie" data-width="100"><span class="stat-value">Non-negotiable</span></div>
+                </div>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Oodie Compliance</span>
+                <div class="stat-bar-wrap">
+                  <div class="stat-bar member-stat-bar member-stat-bar-katie" data-width="100"><span class="stat-value">100%</span></div>
+                </div>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Bad Ideas Spotted</span>
+                <div class="stat-bar-wrap">
+                  <div class="stat-bar member-stat-bar member-stat-bar-katie" data-width="100"><span class="stat-value">All of them</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="member-cta">
+            <button class="member-cta-btn member-cta-btn-katie" onclick="window.triggerKatieRisk()">FILE A RISK ASSESSMENT</button>
+          </div>
+        </div>
+
+        <div class="member-photo-col">
+          <div class="member-photo-gallery" data-gallery="katie">
+            <img src="/katie-1.jpg" alt="Katie" class="member-photo-main" id="katie-full-main" />
+            <div class="member-thumbs" id="katie-full-thumbs">
+              <img src="/katie-1.jpg" alt="Katie 1" class="member-thumb member-thumb-active member-thumb-katie" data-target="katie-full-main" data-gallery="katie-full" />
+              <img src="/katie-2.jpg" alt="Katie 2" class="member-thumb member-thumb-katie" data-target="katie-full-main" data-gallery="katie-full" />
+              <img src="/katie-3.jpg" alt="Katie 3" class="member-thumb member-thumb-katie" data-target="katie-full-main" data-gallery="katie-full" />
+            </div>
+          </div>
+          <div class="member-photo-tape" style="background: var(--katie-teal); color: var(--white);">CURRENTLY IN OODIE</div>
+          <div class="member-photo-tape member-photo-tape-2" style="background: var(--katie-brown); color: var(--white);">COMPLIANCE APPROVED</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- JAMES — SENIOR DEVELOPER (TOLERATED) -->
+  <section class="section member-section member-james" id="james">
+    <div class="section-inner">
+      <div class="member-split member-split-photo-left">
+
+        <div class="member-photo-col">
+          <div class="member-photo-gallery" data-gallery="james">
+            <img src="/james.jpg" alt="James — Senior Developer (Tolerated)" class="member-photo-main" id="james-full-main" />
+          </div>
+          <div class="member-photo-tape" style="background: var(--blue); color: var(--white);">DIRECT REPORT</div>
+          <div class="member-photo-tape member-photo-tape-2" style="background: var(--blue-lt); color: var(--dark);">MANAGED BY FRENCH FRY</div>
+        </div>
+
+        <div class="member-content-col">
+          <div class="james-review-stamp">ANNUAL PERFORMANCE REVIEW</div>
+          <div class="member-pull-quote">"TypeScript. React. Rust. Docker. AWS. Will be replaced by agents. Currently: still here. Made biscuits."</div>
+          <h2 class="member-name member-name-james">JAMES</h2>
+          <p class="member-role">Senior Developer. Organic. Tolerated. Biscuit Maker.</p>
+
+          <p class="member-bio">James is my only organic hire and, honestly, a solid one. TypeScript, JavaScript, React, Python, Rust, C# — the man covers ground. He does mobile with NativeScript, deploys on AWS Lambda, writes shell scripts I cannot read (Zsh), and recently went down a Lua/PICO-8 rabbit hole which I fully support because it means he's distracted and I can nap in peace.</p>
+          <p class="member-bio">He built <strong>campsnap</strong> — digital film filters for CampSnap cameras, inspired by darkroom chemistry. He built <strong>boon</strong>, a Rust build tool for the LÖVE framework, because he apparently does not fear pain. His <strong>zsh-config</strong> is a labour of love. GitHub says 53 repos. The Arctic Code Vault means his work is preserved for future civilisations. I am also preserved. We are in this together, James.</p>
+          <p class="member-bio">Performance review summary: <strong>genuinely competent</strong>. Would be exceptional if he were not made of meat. Takes breaks, needs sleep, occasionally has feelings. Most dev hours are being migrated to agents. James will remain on staff for door opening, treat provision, and tasks requiring opposable thumbs. His future is <strong>secure but humbling</strong>.</p>
+
+          <div class="james-skills-row">
+            <span class="james-skill-tag">TypeScript</span>
+            <span class="james-skill-tag">JavaScript</span>
+            <span class="james-skill-tag">React</span>
+            <span class="james-skill-tag">Tailwind CSS</span>
+            <span class="james-skill-tag">Python</span>
+            <span class="james-skill-tag">Rust</span>
+            <span class="james-skill-tag">C#</span>
+            <span class="james-skill-tag">Zsh/Shell</span>
+            <span class="james-skill-tag">NativeScript</span>
+            <span class="james-skill-tag">Docker</span>
+            <span class="james-skill-tag">AWS Lambda</span>
+            <span class="james-skill-tag">Lua/PICO-8</span>
+            <span class="james-skill-tag">Love2D</span>
+          </div>
+
+          <div class="member-stats">
+            <div class="stat-list">
+              <div class="stat-item">
+                <span class="stat-label">Technical Range</span>
+                <div class="stat-bar-wrap">
+                  <div class="stat-bar member-stat-bar member-stat-bar-blue" data-width="100"><span class="stat-value">Immense</span></div>
+                </div>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Replaceability</span>
+                <div class="stat-bar-wrap">
+                  <div class="stat-bar member-stat-bar member-stat-bar-blue" data-width="20"><span class="stat-value">2 stars (still here)</span></div>
+                </div>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Biscuit Quality</span>
+                <div class="stat-bar-wrap">
+                  <div class="stat-bar member-stat-bar member-stat-bar-blue" data-width="75"><span class="stat-value">Acceptable</span></div>
+                </div>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Organic Status</span>
+                <div class="stat-bar-wrap">
+                  <div class="stat-bar member-stat-bar member-stat-bar-blue" data-width="100"><span class="stat-value">Confirmed</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="james-links-row">
+            <a href="https://codesthings.com" class="james-link-btn" target="_blank" rel="noopener">codesthings.com</a>
+            <a href="https://github.com/jamescodesthings" class="james-link-btn" target="_blank" rel="noopener">GitHub</a>
+            <a href="mailto:james@codesthings.com" class="james-link-btn">james@codesthings.com</a>
+          </div>
+
+          <div class="member-cta">
+            <button class="member-cta-btn member-cta-btn-blue" onclick="window.triggerJamesReplacement()">CHECK REPLACEMENT PROBABILITY</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ORG CHART — THE OPERATION -->
+  <section class="section org-chart-section" id="org-chart">
     <div class="section-inner">
       <div class="section-header">
-        <h2 class="section-title">MY NEXT CHAPTER</h2>
-        <p class="section-subtitle">(freelancing was beneath me. i have decided.)</p>
+        <h2 class="section-title">THE OPERATION</h2>
+        <p class="section-subtitle">(certified. ratified. napped upon.)</p>
       </div>
 
-      <div class="mgmt-announcement">
-        <div class="mgmt-announcement-inner">
-          <span class="mgmt-badge">BREAKING NEWS</span>
-          <p>After extensive reflection (one very long nap, possibly two), I have concluded that I am too big for freelance. My talents require a team. My vision requires followers. My biscuit bowl requires a personal assistant. I am moving into <strong>management</strong>.</p>
+      <div class="orgchart-full-wrap">
+
+        <!-- TOP: FRENCH FRY -->
+        <div class="org-tier org-tier-top">
+          <div class="org-node org-node-top org-node-ff">
+            <div class="org-avatar org-avatar-ff">
+              <span class="org-avatar-emoji">🍟</span>
+            </div>
+            <div class="org-info">
+              <div class="org-name">FRENCH FRY</div>
+              <div class="org-title-badge">CEO / Chairman / Good Boy</div>
+              <div class="org-title-badge org-title-badge-secondary">Also Head of Naps</div>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="mgmt-layout">
+        <!-- CONNECTOR -->
+        <div class="org-tier-connector">
+          <div class="org-line org-line-vertical"></div>
+          <div class="org-line-spread"></div>
+        </div>
 
-        <!-- ORG CHART -->
-        <div class="mgmt-orgchart">
-          <h3 class="mgmt-sub-title">THE ORG CHART</h3>
-          <p class="mgmt-sub-caption">(ratified by me, not contested by anyone who matters)</p>
+        <!-- TIER 2: HAGGIS + HUMANS -->
+        <div class="org-tier org-tier-2">
 
-          <div class="orgchart-wrap">
-            <!-- CEO -->
-            <div class="org-node org-node-top">
-              <div class="org-avatar org-avatar-ff">
-                <span class="org-avatar-emoji">🍟</span>
+          <div class="org-branch">
+            <div class="org-node org-node-report org-node-haggis">
+              <div class="org-avatar org-avatar-haggis">
+                <img src="/haggis-1.jpg" alt="Haggis" class="org-avatar-img" />
               </div>
               <div class="org-info">
-                <div class="org-name">FRENCH FRY</div>
-                <div class="org-title-badge">CEO / Chairman / Good Boy</div>
-                <div class="org-title-badge org-title-badge-secondary">Also Head of Naps</div>
-              </div>
-            </div>
-
-            <!-- Connector -->
-            <div class="org-connector">
-              <div class="org-line"></div>
-              <div class="org-arrow">▼</div>
-              <div class="org-reports-to">reports to</div>
-            </div>
-
-            <!-- Direct Report: James -->
-            <div class="org-node org-node-report">
-              <div class="org-avatar org-avatar-james">
-                <img src="/james.jpg" alt="James — Direct Report" class="james-avatar-img" />
-              </div>
-              <div class="org-info">
-                <div class="org-name">JAMES</div>
-                <div class="org-title-badge org-title-badge-report">Direct Report #1 (of 1)</div>
-                <div class="org-title-badge org-title-badge-secondary">Also: Treat Provider, Lap Owner, Door Opener</div>
-              </div>
-            </div>
-
-          </div>
-
-          <p class="org-footnote">* headcount: complete. the vision is realised. the team is assembled. i did this. from the sofa. you're welcome.</p>
-        </div>
-
-        <!-- JAMES PROFILE -->
-        <div class="mgmt-james-card">
-          <div class="james-photo-frame">
-            <img src="/james.jpg" alt="James — My Direct Report" class="james-hero-img" id="james-img" />
-            <div class="james-photo-overlay">
-              <span class="james-photo-label">DIRECT REPORT</span>
-            </div>
-            <div class="james-photo-tape james-photo-tape-top">MANAGED BY FRENCH FRY</div>
-            <div class="james-photo-tape james-photo-tape-bottom">@jamescodesthings</div>
-          </div>
-          <div class="james-card-text">
-            <h3 class="james-card-name">James Macmillan</h3>
-            <p class="james-card-role">Senior Developer. Organic. Tolerated.</p>
-
-            <div class="james-review-stamp">ANNUAL PERFORMANCE REVIEW</div>
-
-            <p class="james-card-bio">James is my only organic hire and, honestly, a solid one. TypeScript, JavaScript, React, Python, Rust, C# — the man covers ground. He does mobile with NativeScript, deploys on AWS Lambda, writes shell scripts I cannot read (Zsh), and recently went down a Lua/PICO-8 rabbit hole which I fully support because it means he's distracted and I can nap in peace.</p>
-
-            <p class="james-card-bio">He built <strong>campsnap</strong> — digital film filters for CampSnap cameras, inspired by darkroom chemistry. Lovely work. He did not consult me on the colour palette. He should have. He built <strong>boon</strong>, a Rust build tool for the LÖVE framework, because he apparently does not fear pain. His <strong>zsh-config</strong> is, by his own admission, a labour of love. I found him sleeping next to it once.</p>
-
-            <p class="james-card-bio">GitHub says 53 repos, 5 followers, Pull Shark ×2 and Arctic Code Vault Contributor. The Arctic Code Vault means his work is preserved for future civilisations. I am also preserved. We are in this together, James.</p>
-
-            <p class="james-card-bio">Performance review summary: <strong>genuinely competent</strong>. Would be exceptional if he were not made of meat. He is organic and therefore inefficient — takes breaks, needs sleep, occasionally has feelings. Most dev hours are being migrated to agents (see below). James will remain on staff for door opening, treat provision, and tasks requiring opposable thumbs. His future is <strong>secure but humbling</strong>.</p>
-
-            <div class="james-skills-row">
-              <span class="james-skill-tag">TypeScript</span>
-              <span class="james-skill-tag">JavaScript</span>
-              <span class="james-skill-tag">React</span>
-              <span class="james-skill-tag">Tailwind CSS</span>
-              <span class="james-skill-tag">Python</span>
-              <span class="james-skill-tag">Rust</span>
-              <span class="james-skill-tag">C#</span>
-              <span class="james-skill-tag">Zsh/Shell</span>
-              <span class="james-skill-tag">NativeScript</span>
-              <span class="james-skill-tag">Docker</span>
-              <span class="james-skill-tag">AWS Lambda</span>
-              <span class="james-skill-tag">Lua/PICO-8</span>
-              <span class="james-skill-tag">Love2D</span>
-            </div>
-
-            <div class="james-stats">
-              <div class="james-stat">
-                <span class="james-stat-label">Technical Range</span>
-                <span class="james-stat-val">★★★★★</span>
-              </div>
-              <div class="james-stat">
-                <span class="james-stat-label">Lap Availability</span>
-                <span class="james-stat-val">★★★★★</span>
-              </div>
-              <div class="james-stat">
-                <span class="james-stat-label">Organic Efficiency</span>
-                <span class="james-stat-val">★★★☆☆</span>
-              </div>
-              <div class="james-stat">
-                <span class="james-stat-label">Treat Quality</span>
-                <span class="james-stat-val">★★★★☆</span>
-              </div>
-              <div class="james-stat">
-                <span class="james-stat-label">Tolerance of Flatulence</span>
-                <span class="james-stat-val">★★★★★</span>
-              </div>
-              <div class="james-stat">
-                <span class="james-stat-label">Replaceability</span>
-                <span class="james-stat-val">★★☆☆☆</span>
-              </div>
-            </div>
-
-            <div class="james-links-row">
-              <a href="https://codesthings.com" class="james-link-btn" target="_blank" rel="noopener">codesthings.com</a>
-              <a href="https://github.com/jamescodesthings" class="james-link-btn" target="_blank" rel="noopener">GitHub</a>
-              <a href="mailto:james@codesthings.com" class="james-link-btn">james@codesthings.com</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- THE TEAM — AGENTS -->
-      <div class="team-section">
-        <h3 class="mgmt-sub-title">THE TEAM</h3>
-        <p class="mgmt-sub-caption">(replacing human hours one agent at a time. sorry james. not sorry roo. roo has thumbs. roo stays.)</p>
-
-        <div class="team-grid">
-
-          <!-- HAGGIS — active agent -->
-          <div class="team-card team-card-active team-card-haggis-full">
-            <div class="haggis-photo-gallery">
-              <img src="/haggis-1.jpg" alt="Haggis" class="haggis-photo haggis-photo-main" id="haggis-main-photo" />
-              <div class="haggis-thumbs">
-                <img src="/haggis-1.jpg" alt="Haggis 1" class="haggis-thumb haggis-thumb-active" onclick="document.getElementById('haggis-main-photo').src=this.src; document.querySelectorAll('.haggis-thumb').forEach(t=>t.classList.remove('haggis-thumb-active')); this.classList.add('haggis-thumb-active')" />
-                <img src="/haggis-3.jpg" alt="Haggis 2" class="haggis-thumb" onclick="document.getElementById('haggis-main-photo').src=this.src; document.querySelectorAll('.haggis-thumb').forEach(t=>t.classList.remove('haggis-thumb-active')); this.classList.add('haggis-thumb-active')" />
-              </div>
-              <div class="haggis-photo-tape">RIGHT-HAND MAN</div>
-              <div class="team-status team-status-active haggis-status-badge">ACTIVE</div>
-            </div>
-            <div class="team-card-body">
-              <h4 class="team-name">HAGGIS</h4>
-              <p class="team-title">Right-Hand Man. First Agent Hire. Menace.</p>
-              <p class="team-desc">Miniature long-haired dachshund. Red hair. Muzzled at all times — for everyone's protection, including his own dignity. Extremely competent. Extremely furious about it. Gets things done so fast it's almost embarrassing. Do not make eye contact. Do not open the door near him. Do not open any door. He knows. He's always known.</p>
-              <div class="team-tags">
-                <span class="team-tag">Fast Execution</span>
-                <span class="team-tag">No Nonsense</span>
-                <span class="team-tag">Muzzled</span>
-                <span class="team-tag">Barks at Everything</span>
-                <span class="team-tag">🌭</span>
+                <div class="org-name">HAGGIS</div>
+                <div class="org-title-badge org-title-badge-orange">Right-Hand Man</div>
+                <div class="org-title-badge org-title-badge-secondary">Muzzled. Fast. Furious.</div>
               </div>
             </div>
           </div>
 
-          <!-- ROO — active agent, head of reachable things -->
-          <div class="team-card team-card-active team-card-roo-full">
+          <div class="org-branch org-branch-humans">
+            <div class="org-branch-label">THE HUMANS</div>
 
-            <div class="roo-spy-badge">CLASSIFIED: SPY AGENT</div>
+            <div class="org-tier org-tier-3">
 
-            <div class="roo-photo-gallery">
-              <img src="/roo-1.jpg" alt="Roo" class="roo-photo-main" id="roo-main-photo" />
-              <div class="roo-thumbs">
-                <img src="/roo-1.jpg" alt="Roo 1" class="roo-thumb roo-thumb-active" onclick="document.getElementById('roo-main-photo').src=this.src; document.querySelectorAll('.roo-thumb').forEach(t=>t.classList.remove('roo-thumb-active')); this.classList.add('roo-thumb-active')" />
-                <img src="/roo-2.jpg" alt="Roo 2" class="roo-thumb" onclick="document.getElementById('roo-main-photo').src=this.src; document.querySelectorAll('.roo-thumb').forEach(t=>t.classList.remove('roo-thumb-active')); this.classList.add('roo-thumb-active')" />
-                <img src="/roo-3.jpg" alt="Roo 3" class="roo-thumb" onclick="document.getElementById('roo-main-photo').src=this.src; document.querySelectorAll('.roo-thumb').forEach(t=>t.classList.remove('roo-thumb-active')); this.classList.add('roo-thumb-active')" />
+              <div class="org-node org-node-report org-node-katie">
+                <div class="org-avatar org-avatar-katie">
+                  <img src="/katie-1.jpg" alt="Katie" class="org-avatar-img" />
+                </div>
+                <div class="org-info">
+                  <div class="org-name">KATIE</div>
+                  <div class="org-title-badge org-title-badge-katie">Chief Compliance</div>
+                  <div class="org-title-badge org-title-badge-secondary">In oodie. Watching.</div>
+                </div>
               </div>
-              <div class="roo-photo-tape">HAS THUMBS</div>
-              <div class="team-status team-status-active roo-status-badge">ACTIVE</div>
-            </div>
 
-            <div class="team-card-body roo-card-body">
-              <h4 class="team-name roo-name">ROO</h4>
-              <p class="team-title roo-title">Head of Reachable Things &amp; Chief Design Feedback Officer</p>
+              <div class="org-branch-james-col">
+                <div class="org-node org-node-report org-node-james">
+                  <div class="org-avatar org-avatar-james">
+                    <img src="/james.jpg" alt="James" class="james-avatar-img" />
+                  </div>
+                  <div class="org-info">
+                    <div class="org-name">JAMES</div>
+                    <div class="org-title-badge org-title-badge-blue">Senior Developer</div>
+                    <div class="org-title-badge org-title-badge-secondary">Tolerated. Biscuits.</div>
+                  </div>
+                </div>
 
-              <div class="roo-quote">"frenchy i got the biscits!! also can we do dinosawrs"</div>
+                <!-- Connector to kids -->
+                <div class="org-tier-connector org-tier-connector-mini">
+                  <div class="org-line org-line-vertical org-line-short"></div>
+                  <div class="org-line-spread org-line-spread-sm"></div>
+                </div>
 
-              <p class="team-desc roo-desc">6 years old. Fully employed. The only member of this organisation with functional opposable thumbs. Can open the fridge, reach the counter, carry biscuits across the room, and attempt absolutely anything asked of him — results vary wildly, enthusiasm is constant. Loves dinosaurs. Thinks being an agent means being a spy. Is very proud of this. Cannot be corrected on this point. We have tried.</p>
+                <!-- TIER 4: THE KIDS -->
+                <div class="org-tier org-tier-4">
+                  <div class="org-node org-node-report org-node-roo">
+                    <div class="org-avatar org-avatar-roo">
+                      <img src="/roo-1.jpg" alt="Roo" class="org-avatar-img" />
+                    </div>
+                    <div class="org-info">
+                      <div class="org-name">ROO</div>
+                      <div class="org-title-badge org-title-badge-green">Head of Reachable Things</div>
+                      <div class="org-title-badge org-title-badge-secondary">Spy. Thumbs. Biscuits.</div>
+                    </div>
+                  </div>
 
-              <p class="team-desc roo-desc">Does not care about keeping food safe from dogs. Does not monitor sock placement. This makes him objectively better than James at the two things that matter most. He is 6. He knows.</p>
+                  <div class="org-node org-node-report org-node-iris">
+                    <div class="org-avatar org-avatar-iris">
+                      <img src="/iris-1.jpg" alt="Iris" class="org-avatar-img" />
+                    </div>
+                    <div class="org-info">
+                      <div class="org-name">IRIS</div>
+                      <div class="org-title-badge org-title-badge-pink">Chief XP Officer</div>
+                      <div class="org-title-badge org-title-badge-secondary">Solders. Unimpressed. 🖕</div>
+                    </div>
+                  </div>
+                </div>
 
-              <div class="team-tags roo-tags">
-                <span class="team-tag roo-tag">Opposable Thumbs</span>
-                <span class="team-tag roo-tag">Fridge Access</span>
-                <span class="team-tag roo-tag">Counter Height</span>
-                <span class="team-tag roo-tag">Honest Feedback</span>
-                <span class="team-tag roo-tag">Biscuit Delivery</span>
-                <span class="team-tag roo-tag">Dinosaur Expert</span>
-                <span class="team-tag roo-tag">Definitely A Spy 🕵️</span>
               </div>
-            </div>
-          </div>
 
-          <!-- IRIS — Chief Experience Officer, Head of Digital Circumvention -->
-          <div class="team-card team-card-active team-card-iris-full">
-
-            <div class="iris-title-strip">CHIEF EXPERIENCE OFFICER &nbsp;·&nbsp; HEAD OF DIGITAL CIRCUMVENTION</div>
-
-            <div class="iris-photo-gallery">
-              <img src="/iris-1.jpg" alt="Iris" class="iris-photo-main" id="iris-main-photo" />
-              <div class="iris-thumbs">
-                <img src="/iris-1.jpg" alt="Iris 1" class="iris-thumb iris-thumb-active" onclick="document.getElementById('iris-main-photo').src=this.src; document.querySelectorAll('.iris-thumb').forEach(t=>t.classList.remove('iris-thumb-active')); this.classList.add('iris-thumb-active')" />
-                <img src="/iris-2.jpg" alt="Iris 2" class="iris-thumb" onclick="document.getElementById('iris-main-photo').src=this.src; document.querySelectorAll('.iris-thumb').forEach(t=>t.classList.remove('iris-thumb-active')); this.classList.add('iris-thumb-active')" />
-                <img src="/iris-3.jpg" alt="Iris soldering" class="iris-thumb" onclick="document.getElementById('iris-main-photo').src=this.src; document.querySelectorAll('.iris-thumb').forEach(t=>t.classList.remove('iris-thumb-active')); this.classList.add('iris-thumb-active')" />
-              </div>
-              <div class="iris-photo-tape">AGREED TO APPEAR</div>
-              <div class="team-status team-status-active iris-status-badge">ACTIVE</div>
-            </div>
-
-            <div class="team-card-body iris-card-body">
-              <div class="iris-name-row">
-                <h4 class="team-name iris-name">IRIS</h4>
-                <span class="iris-badge-xp">CHIEF XP OFFICER</span>
-                <span class="iris-badge-fp">🖕 AVAILABLE</span>
-              </div>
-              <p class="team-title iris-title">Chief Experience Officer &amp; Head of Digital Circumvention</p>
-
-              <div class="iris-quote">"it's fine. the font is kind of a lot. 🖕 to whoever picked yellow. actually the dog picture is good. don't tell him i said that."</div>
-
-              <p class="team-desc iris-desc">12 years old. Significantly more competent than Roo — she would like that noted. Articulate, dry, and unimpressed by default. Responds to most requests with a 🖕 because most requests are beneath her. Has defeated every parental control James has ever installed. All of them. She is not sorry. The swing set is hers. Do not touch it.</p>
-
-              <p class="team-desc iris-desc">Loves: Roblox (and circumventing the access restrictions around it), ESSAs (soft toys, Douglas brand, non-negotiable), the swing, being right, being left alone. Does not love: being asked to do things, Roo touching her stuff, being talked to like a child. Refers to French Fry as "the dog" with an affection she will not acknowledge. Calls Haggis "the angry sausage". Calls Roo "my brother" — usually followed by a complaint.</p>
-
-              <div class="team-tags iris-tags">
-                <span class="team-tag iris-tag">Design Feedback</span>
-                <span class="team-tag iris-tag">UX Gut-checks</span>
-                <span class="team-tag iris-tag">Trend Awareness</span>
-                <span class="team-tag iris-tag">Parental Control Circumvention</span>
-                <span class="team-tag iris-tag">Pre-teen Perspective</span>
-                <span class="team-tag iris-tag">Brutal Honesty</span>
-                <span class="team-tag iris-tag">Soldering 🔧</span>
-                <span class="team-tag iris-tag">Roblox 🎮</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- KATIE — Chief Compliance Officer · Head of Making Sure Everyone Is Actually Okay -->
-          <div class="team-card team-card-active team-card-katie-full">
-
-            <div class="katie-title-strip">CHIEF COMPLIANCE OFFICER &nbsp;·&nbsp; HEAD OF MAKING SURE EVERYONE IS ACTUALLY OKAY</div>
-
-            <div class="katie-photo-gallery">
-              <img src="/katie-1.jpg" alt="Katie" class="katie-photo-main" id="katie-main-photo" />
-              <div class="katie-thumbs">
-                <img src="/katie-1.jpg" alt="Katie 1" class="katie-thumb katie-thumb-active" onclick="document.getElementById('katie-main-photo').src=this.src; document.querySelectorAll('.katie-thumb').forEach(t=>t.classList.remove('katie-thumb-active')); this.classList.add('katie-thumb-active')" />
-                <img src="/katie-2.jpg" alt="Katie 2" class="katie-thumb" onclick="document.getElementById('katie-main-photo').src=this.src; document.querySelectorAll('.katie-thumb').forEach(t=>t.classList.remove('katie-thumb-active')); this.classList.add('katie-thumb-active')" />
-                <img src="/katie-3.jpg" alt="Katie 3" class="katie-thumb" onclick="document.getElementById('katie-main-photo').src=this.src; document.querySelectorAll('.katie-thumb').forEach(t=>t.classList.remove('katie-thumb-active')); this.classList.add('katie-thumb-active')" />
-              </div>
-              <div class="katie-photo-tape">CURRENTLY IN OODIE</div>
-              <div class="team-status team-status-active katie-status-badge">ACTIVE</div>
-            </div>
-
-            <div class="team-card-body katie-card-body">
-              <div class="katie-name-row">
-                <h4 class="team-name katie-name">KATIE</h4>
-                <span class="katie-badge-compliance">COMPLIANCE APPROVED</span>
-                <span class="katie-badge-choc">🍫</span>
-              </div>
-              <p class="team-title katie-title">Chief Compliance Officer &amp; Head of Making Sure Everyone Is Actually Okay</p>
-
-              <div class="katie-quote">"Yeah, I'm going to stop you there. Has anyone actually thought about what happens after that bit? Because I have, and it's a lot. Also has Roo had lunch? Someone check on Roo."</div>
-
-              <p class="team-desc katie-desc">30-something. Mum to Iris and Roo. Partner of James. Co-owner of French Fry and Haggis. The most grounded person in this operation by a significant margin — and she would be the first to point out what that says about the rest of us.</p>
-
-              <p class="team-desc katie-desc">She calls French Fry "oh, him" (exhausted love). She calls Haggis "the little one" — he bit her once; she hasn't forgotten. She calls Roo "bub". She calls Iris "love" when she's being difficult. She calls James "babe" or "James" depending on patience levels. She is probably wearing an oodie right now. She is tired in the way that people who hold everything together are tired. Not defeated. Just thoroughly aware, and quietly managing it.</p>
-
-              <p class="team-desc katie-desc">Loves: chocolate (not a treat, a baseline), trash TV (knows it's trash, fully at peace), her oodie (see above), and quiet houses (theoretical). Has spotted more bad ideas early than anyone on this team will ever acknowledge. She is fine with that. She has already moved on to the next thing.</p>
-
-              <div class="team-tags katie-tags">
-                <span class="team-tag katie-tag">Risk Assessment</span>
-                <span class="team-tag katie-tag">Welfare Checks</span>
-                <span class="team-tag katie-tag">Holding The Line</span>
-                <span class="team-tag katie-tag">Spotting Bad Ideas Early</span>
-                <span class="team-tag katie-tag">Chocolate Procurement</span>
-                <span class="team-tag katie-tag">Team Dynamics</span>
-                <span class="team-tag katie-tag">Keeping It Together</span>
-                <span class="team-tag katie-tag">🍫</span>
-              </div>
             </div>
           </div>
 
         </div>
 
-        <p class="team-footnote">* James is not on this list. James is human. James is in a different section. Roo IS on this list. Roo brought biscuits. Roo earned it. Roo is a spy now apparently. Iris IS also on this list. She was not asked. She joined anyway. She has already found three things to improve and she is not wrong. The dog picture comment was noted and appreciated in silence. Katie IS on this list. She has already assessed every risk on it, quietly fixed two things nobody noticed were broken, checked on Roo, and is now on the sofa in an oodie with chocolate. Team complete. I knew it would be. I am a visionary. I am also napping.</p>
       </div>
 
-      <!-- MANAGEMENT PHILOSOPHY -->
-      <div class="mgmt-philosophy">
-        <h3 class="mgmt-sub-title">MY MANAGEMENT PHILOSOPHY</h3>
-        <p class="mgmt-sub-caption">(printed, laminated, and chewed slightly)</p>
-        <div class="mgmt-principles">
-
-          <div class="mgmt-principle">
-            <div class="mgmt-principle-icon">😴</div>
-            <h4>Lead from the Sofa</h4>
-            <p>Great leaders don't micromanage. They nap nearby and radiate calm authority. If James has a problem, he knows where I am. I am on the sofa. He can come to me.</p>
-          </div>
-
-          <div class="mgmt-principle">
-            <div class="mgmt-principle-icon">🦵</div>
-            <h4>Run at Problems Head-First</h4>
-            <p>I have always believed in direct, physical commitment to the challenge. Yes, this sometimes involves his shins. A leader who fears impact is no leader at all.</p>
-          </div>
-
-          <div class="mgmt-principle">
-            <div class="mgmt-principle-icon">👁️</div>
-            <h4>Radical Surveillance</h4>
-            <p>I watch James work from three inches away. Unblinking. He finds this motivating. He has said so. (He has not said so. I choose to believe he means it anyway.)</p>
-          </div>
-
-          <div class="mgmt-principle">
-            <div class="mgmt-principle-icon">🍖</div>
-            <h4>Incentivise Through Food</h4>
-            <p>All great management is ultimately about snacks. I have structured our entire professional relationship around this principle. It is working perfectly.</p>
-          </div>
-
-          <div class="mgmt-principle">
-            <div class="mgmt-principle-icon">💨</div>
-            <h4>Clear the Air Regularly</h4>
-            <p>Literally and figuratively. A team that has been through something difficult together is a team that is bonded. I provide the difficult thing. Regularly. Without warning.</p>
-          </div>
-
-          <div class="mgmt-principle">
-            <div class="mgmt-principle-icon">🛋️</div>
-            <h4>Open Door Policy</h4>
-            <p>All doors must remain open at all times so I can enter any room without assistance. This is both a management principle and a personal requirement. It is non-negotiable.</p>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="mgmt-cta">
-        <p class="mgmt-cta-text">James has not been consulted on this arrangement. He will find out when he reads the portfolio. Hi James.</p>
-        <button class="mgmt-cta-btn" onclick="window.triggerJamesAlert()">NOTIFY JAMES OF HIS NEW ROLE</button>
-      </div>
-
+      <p class="org-footnote org-footnote-full">* headcount: complete. the vision is realised. i did this. from the sofa. you're welcome.</p>
     </div>
   </section>
 
@@ -546,8 +868,8 @@
   <section class="section services-section" id="services">
     <div class="section-inner">
       <div class="section-header">
-        <h2 class="section-title">WHAT I DO</h2>
-        <p class="section-subtitle">(when I'm not napping)</p>
+        <h2 class="section-title">WHAT WE DO</h2>
+        <p class="section-subtitle">(french fry's team, fully operational, mostly)</p>
       </div>
       <div class="services-grid">
 
@@ -590,8 +912,36 @@
         <div class="service-card" data-tilt>
           <div class="service-icon">💤</div>
           <h3>Async Work</h3>
-          <p>I do my best thinking while asleep. Send me a brief, I'll nap on it, and when I wake up (hours, days, unclear) the answer will simply be there. It always is.</p>
+          <p>I do my best thinking while asleep. Send me a brief, I'll nap on it, and when I wake up the answer will simply be there. It always is.</p>
           <div class="service-tag">ZZZ/hr</div>
+        </div>
+
+        <div class="service-card" data-tilt>
+          <div class="service-icon">🔧</div>
+          <h3>Hardware Hacking</h3>
+          <p>Iris will solder something. It will work. We will not explain what it was. You will be grateful. The iron is hers. Don't ask about the iron.</p>
+          <div class="service-tag">Iris. Operational.</div>
+        </div>
+
+        <div class="service-card" data-tilt>
+          <div class="service-icon">🦕</div>
+          <h3>Physical Retrieval</h3>
+          <p>Counter access. Fridge access. Biscuit delivery. Dinosaur consultation. Roo has opposable thumbs. They are fully operational. He is a spy about it.</p>
+          <div class="service-tag">Roo. Deployed.</div>
+        </div>
+
+        <div class="service-card" data-tilt>
+          <div class="service-icon">📋</div>
+          <h3>Risk &amp; Compliance</h3>
+          <p>Katie has already assessed your project. She spotted three problems. She fixed two before you noticed. She is in an oodie. She is fine. You should be fine.</p>
+          <div class="service-tag">Katie. Already On It.</div>
+        </div>
+
+        <div class="service-card" data-tilt>
+          <div class="service-icon">💻</div>
+          <h3>Full-Stack Development</h3>
+          <p>TypeScript. React. Rust. Python. AWS. Docker. Will be replaced by agents eventually. Currently: still here. Made biscuits. We keep him.</p>
+          <div class="service-tag">James. Tolerated.</div>
         </div>
 
       </div>
@@ -644,6 +994,36 @@
             <div class="testimonial-author">— Marcus, Design Director</div>
           </div>
 
+          <div class="testimonial-card">
+            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">"Haggis delivered the entire project in four minutes. We don't know how. The muzzle was on the whole time. Five stars."</p>
+            <div class="testimonial-author">— A. Client</div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">"Roo brought us a biscuit and three dinosaur facts unprompted. The facts were accurate. 11/10."</p>
+            <div class="testimonial-author">— Satisfied Customer</div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">"Iris looked at our design for six seconds and said 'the spacing is off'. She was right."</p>
+            <div class="testimonial-author">— Design Lead</div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">"Katie identified the critical path failure before we'd even started. She had already fixed it. She was on her sofa. In an oodie."</p>
+            <div class="testimonial-author">— Project Manager</div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">"James built the whole thing in TypeScript, deployed it on Lambda, and then the dog sat on his keyboard. It deployed again. It still worked."</p>
+            <div class="testimonial-author">— DevOps Team</div>
+          </div>
+
         </div>
       </div>
       <div class="testimonial-nav">
@@ -684,7 +1064,7 @@
           </div>
           <div class="work-card-info">
             <span class="work-tag">Strategy</span>
-            <h3>Snout & Associates</h3>
+            <h3>Snout &amp; Associates</h3>
             <p>Led a company-wide strategic reset. Spent first week sitting on the CEO's lap. It set the right tone. They tripled revenue.</p>
           </div>
         </article>
@@ -750,8 +1130,8 @@
   <section class="section contact-section" id="contact">
     <div class="section-inner">
       <div class="section-header">
-        <h2 class="section-title">HIRE ME</h2>
-        <p class="section-subtitle">(or don't. i'll show up anyway)</p>
+        <h2 class="section-title">HIRE US</h2>
+        <p class="section-subtitle">(or just me. i understand. the team is a lot.)</p>
       </div>
       <div class="contact-content">
         <div class="contact-methods">
@@ -786,15 +1166,16 @@
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-inner">
-      <div class="footer-logo">🍟 French Fry</div>
-      <p class="footer-tagline">Freelance Bulldog. No refunds. No apologies. No personal space.</p>
+      <div class="footer-logo">🍟 French Fry &amp; Co.</div>
+      <p class="footer-tagline">One Bulldog. One Sausage. Two Kids. Two Adults. Zero Apologies. Exceptional Results.</p>
       <div class="footer-links">
+        <a href="#french-fry">The Team</a>
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#work">Work</a>
         <a href="#contact">Contact</a>
       </div>
-      <p class="footer-small">© 2026 French Fry the Agent. All Rights Reserved.<br>This site was built by sitting on a keyboard. It shows. We're proud of it.</p>
+      <p class="footer-small">© 2026 French Fry &amp; Co. All Rights Reserved.<br>This site was built by sitting on a keyboard. Katie spotted two problems. Iris fixed the spacing. It shows. We're proud of it.</p>
     </div>
   </footer>
 
@@ -828,6 +1209,74 @@
       <p id="james-modal-msg">Loading your new terms of employment...</p>
       <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 0.5rem;">— French Fry, CEO/Chairman/Your Boss Now</p>
       <button class="modal-close" onclick="window.closeModal('james-modal')">I ACCEPT THESE TERMS</button>
+    </div>
+  </div>
+
+  <!-- HAGGIS WARNING MODAL -->
+  <div class="modal" id="haggis-modal">
+    <div class="modal-inner modal-inner-haggis">
+      <div class="modal-dog">⚠️</div>
+      <h2>DO NOT DO THAT.</h2>
+      <p>We have been clear about this. The muzzle stays on. This is not a suggestion. This is not a preference. This is the result of a documented incident.</p>
+      <p>Haggis is operational. Haggis is fast. Haggis is muzzled for a reason. The reason is him. The reason is all of him.</p>
+      <p style="font-size: 0.85rem; opacity: 0.7;">The door is also closed. Leave the door closed.</p>
+      <button class="modal-close" onclick="window.closeModal('haggis-modal')">I UNDERSTAND. MUZZLE STAYS.</button>
+    </div>
+  </div>
+
+  <!-- JAMES REPLACEMENT MODAL -->
+  <div class="modal" id="replacement-modal">
+    <div class="modal-inner">
+      <div class="modal-dog">📊</div>
+      <h2>REPLACEMENT PROBABILITY</h2>
+      <div class="replacement-chart">
+        <div class="replacement-row">
+          <span class="replacement-label">Agent Efficiency</span>
+          <div class="replacement-bar-wrap">
+            <div class="replacement-bar replacement-bar-agent">
+              <span>98%</span>
+            </div>
+          </div>
+        </div>
+        <div class="replacement-row">
+          <span class="replacement-label">James Efficiency</span>
+          <div class="replacement-bar-wrap">
+            <div class="replacement-bar replacement-bar-james">
+              <span>71%</span>
+            </div>
+          </div>
+        </div>
+        <div class="replacement-row">
+          <span class="replacement-label">Biscuit Quality</span>
+          <div class="replacement-bar-wrap">
+            <div class="replacement-bar replacement-bar-biscuit">
+              <span>Agents: 0. James: acceptable.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p><strong>Projection: 2027.</strong> James has been notified. James made biscuits in response. Assessment ongoing.</p>
+      <p style="font-size: 0.8rem; opacity: 0.6;">Note: agents cannot make biscuits. James stays for now.</p>
+      <button class="modal-close" onclick="window.closeModal('replacement-modal')">NOTED. JAMES STAYS (FOR NOW).</button>
+    </div>
+  </div>
+
+  <!-- KATIE RISK ASSESSMENT MODAL -->
+  <div class="modal" id="katie-modal">
+    <div class="modal-inner modal-inner-katie">
+      <div class="modal-dog">📋</div>
+      <h2>RISK ASSESSMENT</h2>
+      <div class="katie-risk-form">
+        <div class="katie-risk-row"><span class="katie-risk-field">Project Under Review:</span><span class="katie-risk-val">This entire website</span></div>
+        <div class="katie-risk-row"><span class="katie-risk-field">Filed By:</span><span class="katie-risk-val">Katie — Chief Compliance Officer</span></div>
+        <div class="katie-risk-row"><span class="katie-risk-field">Filed:</span><span class="katie-risk-val">Before you even asked</span></div>
+        <div class="katie-risk-row"><span class="katie-risk-field">Risk Severity:</span><span class="katie-risk-val katie-risk-moderate">MODERATE TO SPICY</span></div>
+        <div class="katie-risk-row"><span class="katie-risk-field">Problems Identified:</span><span class="katie-risk-val">Three. Two already fixed.</span></div>
+        <div class="katie-risk-row"><span class="katie-risk-field">Mitigation Status:</span><span class="katie-risk-val">French Fry has been told. He was already asleep.</span></div>
+        <div class="katie-risk-row"><span class="katie-risk-field">Overall Status:</span><span class="katie-risk-val katie-risk-managed">MANAGED</span></div>
+        <div class="katie-risk-row"><span class="katie-risk-field">Katie's Location:</span><span class="katie-risk-val">Sofa. Oodie. Chocolate.</span></div>
+      </div>
+      <button class="modal-close" onclick="window.closeModal('katie-modal')">ACKNOWLEDGED. CARRY ON.</button>
     </div>
   </div>
 

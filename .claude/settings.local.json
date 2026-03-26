@@ -34,7 +34,9 @@
       "Bash(git -C /home/james/Downloads/french-fry-the-agent add -A)",
       "Bash(git:*)",
       "Bash(darktable-cli /home/james/Downloads/2018-08-04_12-44-59.NEF /home/james/Downloads/french-fry-the-agent/public/iris-1.jpg --width 1600 --height 1600)",
-      "Bash(darktable-cli /home/james/Downloads/DSC08169.ARW /home/james/Downloads/french-fry-the-agent/public/katie-1.jpg --width 1600 --height 1600)"
+      "Bash(darktable-cli /home/james/Downloads/DSC08169.ARW /home/james/Downloads/french-fry-the-agent/public/katie-1.jpg --width 1600 --height 1600)",
+      "Bash(ls:*)",
+      "Bash(/home/james/Downloads/french-fry-the-agent/public/css/styles.css:*)"
     ]
   }
 }

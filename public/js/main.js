@@ -1,6 +1,7 @@
 /* ============================================================
-   FRENCH FRY THE AGENT — main.js
+   FRENCH FRY & CO. — main.js
    Full chaos engine. Built with attitude. No apologies.
+   Now with the whole team. Six opinions. Zero agreement.
    ============================================================ */
 
 'use strict';
@@ -19,7 +20,29 @@ const TAGLINES = [
   "If you can read this, I am probably already in your office.",
   "Inbox: 0 (I cannot read). Results: 100. Coincidence? No.",
   "I don't have a LinkedIn. I have a treat bag. Same energy.",
+  "haggis is ready. iris is unimpressed. roo is probably being a spy. we're very professional.",
+  "compliance has been notified. katie has already spotted two problems. we are fine.",
+  "james has been informed he is being replaced. he is still here. he made biscuits. he stays.",
+  "the org chart is ratified. i am at the top. this is non-negotiable. good morning.",
+  "six team members. one biscuit bowl. we share. (i eat first. always.)",
 ];
+
+// ---- IRIS FEEDBACK POOL ----
+const IRIS_FEEDBACK = [
+  "it's fine.",
+  "the spacing is off but whatever.",
+  "🖕",
+  "actually that one's okay. don't tell him i said that.",
+  "i've seen worse.",
+  "roo would love this. that's not a compliment.",
+  "i mean. sure. if you want.",
+  "the font is kind of a lot.",
+  "who picked yellow. i'm not saying it's wrong. i'm just asking.",
+  "the layout is fine. the vibe is a lot. but it's fine.",
+  "did anyone test this on mobile. just asking.",
+];
+
+let irisFeedbackIdx = 0;
 
 // ---- SECRET CLICK MESSAGES ----
 const SECRET_MESSAGES = [
@@ -58,6 +81,7 @@ const VIBE_RESPONSES = [
    DOM READY
    ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
+  initNav();
   initCursor();
   initTaglines();
   initDogFace();
@@ -68,8 +92,74 @@ document.addEventListener('DOMContentLoaded', () => {
   initBiscuitCounter();
   initSecretClicks();
   initTiltCards();
-  initPhotoBreak();
+  initPhotoBreaks();
+  initPhotoGalleries();
 });
+
+/* ============================================================
+   STICKY NAV — slides in after hero, IntersectionObserver for active
+   ============================================================ */
+function initNav() {
+  const nav       = document.getElementById('site-nav');
+  const hero      = document.getElementById('hero');
+  const hamburger = document.getElementById('nav-hamburger');
+  const overlay   = document.getElementById('nav-overlay');
+  const links     = document.querySelectorAll('.nav-link');
+
+  if (!nav) return;
+
+  // Show nav after scrolling past hero
+  const heroObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) {
+        nav.classList.add('nav-visible');
+      } else {
+        nav.classList.remove('nav-visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  if (hero) heroObserver.observe(hero);
+
+  // Active link via IntersectionObserver
+  const sections = document.querySelectorAll('section[id], header[id]');
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        links.forEach(link => {
+          link.classList.toggle('nav-active', link.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+
+  sections.forEach(s => sectionObserver.observe(s));
+
+  // Hamburger toggle
+  if (hamburger && overlay) {
+    hamburger.addEventListener('click', () => {
+      const open = hamburger.classList.toggle('open');
+      overlay.classList.toggle('open', open);
+    });
+
+    // Close overlay on link click
+    overlay.querySelectorAll('.nav-overlay-link').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        overlay.classList.remove('open');
+      });
+    });
+
+    // Close on backdrop click
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) {
+        hamburger.classList.remove('open');
+        overlay.classList.remove('open');
+      }
+    });
+  }
+}
 
 /* ============================================================
    CUSTOM CURSOR + PAW TRAILS
@@ -94,7 +184,6 @@ function initCursor() {
     dot.style.left = mouseX + 'px';
     dot.style.top  = mouseY + 'px';
 
-    // Spawn paw trail when moving
     const dx = mouseX - lastPawX;
     const dy = mouseY - lastPawY;
     const dist = Math.sqrt(dx*dx + dy*dy);
@@ -106,7 +195,6 @@ function initCursor() {
     }
   });
 
-  // Smooth ring follow
   (function animateRing() {
     ringX += (mouseX - ringX) * 0.12;
     ringY += (mouseY - ringY) * 0.12;
@@ -115,17 +203,15 @@ function initCursor() {
     requestAnimationFrame(animateRing);
   })();
 
-  // Click sparkles
   document.addEventListener('click', (e) => {
     spawnSparkles(e.clientX, e.clientY);
   });
 }
 
 function spawnPaw(x, y, angleDeg) {
-  const paws = ['🐾', '🐾', '🐾', '🐾'];
   const el = document.createElement('div');
   el.className = 'cursor-paw';
-  el.textContent = paws[Math.floor(Math.random() * paws.length)];
+  el.textContent = '🐾';
   el.style.left = x + 'px';
   el.style.top  = y + 'px';
   el.style.setProperty('--rot', (angleDeg - 90) + 'deg');
@@ -190,7 +276,7 @@ function initDogFace() {
 
   if (!dogFace) return;
 
-  const MAX_TRAVEL = 6; // px
+  const MAX_TRAVEL = 6;
 
   document.addEventListener('mousemove', (e) => {
     movePupil(eyeLeft,  pupilLeft,  e.clientX, e.clientY);
@@ -209,26 +295,18 @@ function initDogFace() {
     pupilEl.style.transform = `translate(calc(-50% + ${Math.cos(angle)*ratio}px), calc(-50% + ${Math.sin(angle)*ratio}px))`;
   }
 
-  // Tongue on hover/click
   dogFace.addEventListener('mouseenter', () => tongue.classList.add('out'));
   dogFace.addEventListener('mouseleave', () => tongue.classList.remove('out'));
 
-  // Click — shake and snort
   dogFace.addEventListener('click', () => {
     dogFace.style.animation = 'none';
     dogFace.style.transform = 'scale(1.1) rotate(5deg)';
-    setTimeout(() => {
-      dogFace.style.transform = 'scale(0.95) rotate(-3deg)';
-    }, 100);
-    setTimeout(() => {
-      dogFace.style.transform = '';
-      dogFace.style.animation = '';
-    }, 300);
+    setTimeout(() => { dogFace.style.transform = 'scale(0.95) rotate(-3deg)'; }, 100);
+    setTimeout(() => { dogFace.style.transform = ''; dogFace.style.animation = ''; }, 300);
     showToast(SECRET_MESSAGES[Math.floor(Math.random() * SECRET_MESSAGES.length)]);
     bumpBiscuit();
   });
 
-  // Random blink
   setInterval(() => {
     if (Math.random() > 0.6) {
       [eyeLeft, eyeRight].forEach(eye => {
@@ -238,7 +316,6 @@ function initDogFace() {
     }
   }, 3000);
 
-  // Ear wiggle on page click
   document.addEventListener('click', () => {
     const ears = document.querySelectorAll('.dog-ear');
     ears.forEach(ear => {
@@ -253,17 +330,37 @@ function initDogFace() {
 }
 
 /* ============================================================
-   SCROLL REVEAL
+   PHOTO GALLERIES — reusable for all member sections
+   ============================================================ */
+function initPhotoGalleries() {
+  document.querySelectorAll('.member-thumb').forEach(thumb => {
+    thumb.addEventListener('click', () => {
+      const targetId = thumb.getAttribute('data-target');
+      const galleryKey = thumb.getAttribute('data-gallery');
+      const mainImg = document.getElementById(targetId);
+      if (!mainImg) return;
+
+      mainImg.src = thumb.src;
+
+      // Update active state within same gallery group
+      const siblings = document.querySelectorAll(`[data-target="${targetId}"]`);
+      siblings.forEach(s => s.classList.remove('member-thumb-active'));
+      thumb.classList.add('member-thumb-active');
+    });
+  });
+}
+
+/* ============================================================
+   SCROLL REVEAL — updated to include member sections
    ============================================================ */
 function initRevealObserver() {
-  // Add reveal class to section children
-  document.querySelectorAll('.section').forEach(section => {
+  document.querySelectorAll('.section, .member-section').forEach(section => {
     const children = section.querySelectorAll(
-      '.about-card, .service-card, .work-card, .testimonial-card, .contact-method, .section-header, .mgmt-principle, .mgmt-james-card, .mgmt-orgchart, .mgmt-announcement, .mgmt-cta, .team-card'
+      '.about-card, .service-card, .work-card, .testimonial-card, .contact-method, .section-header, .mgmt-principle, .mgmt-james-card, .mgmt-orgchart, .mgmt-announcement, .mgmt-cta, .team-card, .member-split, .member-content-col, .member-photo-col, .org-node, .org-branch'
     );
     children.forEach((el, i) => {
       el.classList.add('reveal');
-      el.style.transitionDelay = (i * 0.08) + 's';
+      el.style.transitionDelay = (i * 0.07) + 's';
     });
   });
 
@@ -273,7 +370,7 @@ function initRevealObserver() {
         entry.target.classList.add('visible');
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.08 });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 }
@@ -308,12 +405,11 @@ function initTestimonialCarousel() {
 
   if (!track) return;
 
-  const cards  = track.querySelectorAll('.testimonial-card');
+  const cards   = track.querySelectorAll('.testimonial-card');
   const perPage = window.innerWidth > 900 ? 2 : 1;
   const total   = Math.ceil(cards.length / perPage);
   let   current = 0;
 
-  // Build dots
   for (let i = 0; i < total; i++) {
     const d = document.createElement('div');
     d.className = 't-dot' + (i === 0 ? ' active' : '');
@@ -323,21 +419,15 @@ function initTestimonialCarousel() {
 
   function goTo(idx) {
     current = (idx + total) % total;
-    const offset = current * (100 / perPage) * perPage;
-    track.style.transform = `translateX(-${current * (100 / cards.length) * perPage * perPage}%)`;
-
-    // recalc: each card is 50% wide on desktop
-    const cardWidth  = track.querySelector('.testimonial-card').offsetWidth;
-    const gap        = 24; // 1.5rem
+    const cardWidth = track.querySelector('.testimonial-card').offsetWidth;
+    const gap = 24;
     track.style.transform = `translateX(-${current * (cardWidth + gap) * perPage}px)`;
-
     dotsEl.querySelectorAll('.t-dot').forEach((d, i) => d.classList.toggle('active', i === current));
   }
 
   prev.addEventListener('click', () => goTo(current - 1));
   next.addEventListener('click', () => goTo(current + 1));
 
-  // Auto-advance
   setInterval(() => goTo(current + 1), 6000);
 }
 
@@ -352,10 +442,9 @@ function initVibeCheck() {
   if (!slider) return;
 
   slider.addEventListener('input', () => {
-    const val = parseInt(slider.value, 10);
+    const val  = parseInt(slider.value, 10);
     const vibe = VIBE_RESPONSES.find(v => val <= v.max) || VIBE_RESPONSES[VIBE_RESPONSES.length - 1];
 
-    // Clear all mood classes
     face.classList.remove('sad', 'neutral', 'happy', 'ecstatic');
     face.classList.add(vibe.mood);
 
@@ -365,12 +454,10 @@ function initVibeCheck() {
       response.style.opacity = '1';
     }, 150);
 
-    // Update slider track colour
     const pct = val + '%';
     slider.style.background = `linear-gradient(90deg, var(--yellow) ${pct}, rgba(255,255,255,0.1) ${pct})`;
   });
 
-  // Trigger once at initial value
   slider.dispatchEvent(new Event('input'));
 }
 
@@ -379,24 +466,24 @@ function initVibeCheck() {
    ============================================================ */
 let biscuits = 0;
 
-function bumpBiscuit() {
-  biscuits++;
+function bumpBiscuit(amount) {
+  const n = amount || 1;
+  biscuits += n;
   const countEl = document.getElementById('biscuit-count');
   if (!countEl) return;
   countEl.textContent = biscuits;
   countEl.classList.remove('bump');
-  void countEl.offsetWidth; // reflow
+  void countEl.offsetWidth;
   countEl.classList.add('bump');
   setTimeout(() => countEl.classList.remove('bump'), 300);
 }
 
 function initBiscuitCounter() {
-  // every click anywhere bumps the counter (we ARE a dog)
-  document.addEventListener('click', bumpBiscuit);
+  document.addEventListener('click', () => bumpBiscuit(1));
 }
 
 /* ============================================================
-   SECRET CLICKS (non-dog-face clicks)
+   SECRET CLICKS
    ============================================================ */
 let toastTimeout;
 
@@ -412,7 +499,6 @@ function showToast(msg) {
 function initSecretClicks() {
   let clickCount = 0;
   document.addEventListener('click', (e) => {
-    // Only show toast for non-interactive element clicks
     const tag = e.target.tagName.toLowerCase();
     if (['button', 'a', 'input'].includes(tag)) return;
     if (e.target.closest('.dog-face')) return;
@@ -430,28 +516,62 @@ function initSecretClicks() {
 function initTiltCards() {
   document.querySelectorAll('[data-tilt]').forEach(card => {
     card.addEventListener('mousemove', (e) => {
-      const rect   = card.getBoundingClientRect();
-      const cx     = rect.left + rect.width  / 2;
-      const cy     = rect.top  + rect.height / 2;
-      const dx     = (e.clientX - cx) / (rect.width  / 2);
-      const dy     = (e.clientY - cy) / (rect.height / 2);
+      const rect = card.getBoundingClientRect();
+      const cx   = rect.left + rect.width  / 2;
+      const cy   = rect.top  + rect.height / 2;
+      const dx   = (e.clientX - cx) / (rect.width  / 2);
+      const dy   = (e.clientY - cy) / (rect.height / 2);
       card.style.transform = `perspective(600px) rotateY(${dx * 8}deg) rotateX(${-dy * 8}deg) translateY(-8px)`;
     });
+    card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+  });
+}
 
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = '';
+/* ============================================================
+   PHOTO BREAKS — handles ALL .photo-break instances
+   ============================================================ */
+function initPhotoBreaks() {
+  document.querySelectorAll('.photo-break').forEach(photoBreak => {
+    const img = photoBreak.querySelector('.photo-break-img');
+    if (!img) return;
+
+    img.classList.add('parallax-ready');
+
+    const baseTransform = photoBreak.classList.contains('photo-break-member')
+      ? 'rotate(1.2deg) scaleX(1.04)'
+      : 'rotate(-1.2deg) scaleX(1.04)';
+
+    function onScroll() {
+      const rect  = photoBreak.getBoundingClientRect();
+      const viewH = window.innerHeight;
+      if (rect.bottom < -200 || rect.top > viewH + 200) return;
+
+      const progress = 1 - (rect.bottom / (viewH + rect.height));
+      const shift    = progress * 12 - 6;
+      img.style.transform = `scale(1.06) translateY(${shift}%)`;
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    img.addEventListener('click', () => {
+      showToast(SECRET_MESSAGES[Math.floor(Math.random() * SECRET_MESSAGES.length)]);
+      bumpBiscuit();
+      photoBreak.style.transition = 'transform 0.2s cubic-bezier(0.34,1.56,0.64,1)';
+      photoBreak.style.transform  = baseTransform + ' scale(1.015)';
+      setTimeout(() => {
+        photoBreak.style.transform = baseTransform + ' scale(1)';
+      }, 200);
     });
   });
 }
 
 /* ============================================================
-   GLOBAL MODAL FUNCTIONS (called from HTML onclick)
+   GLOBAL MODAL FUNCTIONS
    ============================================================ */
 window.triggerBark = function() {
   document.getElementById('bark-modal').classList.add('open');
   showToast("WOOF WOOF WOOF 🐕");
-  // Shake the page
-  document.body.style.animation = 'none';
   let shakes = 0;
   const shakeInterval = setInterval(() => {
     document.body.style.transform = shakes % 2 === 0 ? 'translateX(-4px)' : 'translateX(4px)';
@@ -476,15 +596,14 @@ window.triggerJamesAlert = function() {
     "ATTENTION DIRECT REPORT: please refill the water bowl. this is your first official management communication.",
     "James your 1:1 is scheduled for whenever I sit on you. which is always. you're welcome.",
   ];
-  const msg = messages[Math.floor(Math.random() * messages.length)];
-  const modal = document.getElementById('james-modal');
-  const msgEl = document.getElementById('james-modal-msg');
+  const msg    = messages[Math.floor(Math.random() * messages.length)];
+  const modal  = document.getElementById('james-modal');
+  const msgEl  = document.getElementById('james-modal-msg');
   if (msgEl) msgEl.textContent = msg;
   if (modal) modal.classList.add('open');
   showToast("HI JAMES 🐕");
 
-  // Rattle the James photo
-  const img = document.getElementById('james-img');
+  const img = document.getElementById('james-full-main');
   if (img) {
     img.style.transition = 'transform 0.15s';
     let shakes = 0;
@@ -494,6 +613,56 @@ window.triggerJamesAlert = function() {
       if (shakes > 5) { clearInterval(i); img.style.transform = ''; }
     }, 80);
   }
+};
+
+window.triggerHaggisWarning = function() {
+  const modal = document.getElementById('haggis-modal');
+  if (modal) modal.classList.add('open');
+  showToast("DO NOT DO THAT 🌭");
+
+  // Screen shake — more aggressive than bark, because haggis
+  let shakes = 0;
+  const shakeInterval = setInterval(() => {
+    document.body.style.transform = shakes % 2 === 0 ? 'translateX(-6px) translateY(-2px)' : 'translateX(6px) translateY(2px)';
+    shakes++;
+    if (shakes > 10) {
+      clearInterval(shakeInterval);
+      document.body.style.transform = '';
+    }
+  }, 40);
+};
+
+window.triggerRooDossier = function() {
+  showToast("frenchy i got the biscits!! 🦴🦴🦴");
+  bumpBiscuit(3);
+
+  // Spawn some biscuit sparkles
+  for (let i = 0; i < 8; i++) {
+    setTimeout(() => {
+      spawnSparkles(
+        Math.random() * window.innerWidth,
+        Math.random() * window.innerHeight * 0.7
+      );
+    }, i * 100);
+  }
+};
+
+window.triggerIrisFeedback = function() {
+  const feedback = IRIS_FEEDBACK[irisFeedbackIdx % IRIS_FEEDBACK.length];
+  irisFeedbackIdx++;
+  showToast(feedback);
+};
+
+window.triggerKatieRisk = function() {
+  const modal = document.getElementById('katie-modal');
+  if (modal) modal.classList.add('open');
+  showToast("risk assessed. two problems already fixed. 🍫");
+};
+
+window.triggerJamesReplacement = function() {
+  const modal = document.getElementById('replacement-modal');
+  if (modal) modal.classList.add('open');
+  showToast("projection: 2027. james made biscuits. he stays.");
 };
 
 window.closeModal = function(id) {
@@ -509,46 +678,6 @@ document.addEventListener('click', (e) => {
 });
 
 /* ============================================================
-   PHOTO BREAK — parallax scroll + click interaction
-   ============================================================ */
-function initPhotoBreak() {
-  const photoBreak = document.getElementById('photo-break');
-  const img        = document.getElementById('photo-break-img');
-  if (!photoBreak || !img) return;
-
-  img.classList.add('parallax-ready');
-
-  // Parallax: image moves slower than scroll, creates depth
-  function onScroll() {
-    const rect   = photoBreak.getBoundingClientRect();
-    const viewH  = window.innerHeight;
-    // Only run when the break is near the viewport
-    if (rect.bottom < -200 || rect.top > viewH + 200) return;
-
-    // Progress from 0 (entering bottom) to 1 (leaving top)
-    const progress = 1 - (rect.bottom / (viewH + rect.height));
-    // Shift image up to -8% as you scroll past — slower than the page
-    const shift    = progress * 12 - 6; // range: -6% to +6%
-    img.style.transform = `scale(1.06) translateY(${shift}%)`;
-  }
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll(); // run once on load
-
-  // Click the photo: dramatic zoom-in toast — because I do not ignore attention
-  img.addEventListener('click', () => {
-    showToast(SECRET_MESSAGES[Math.floor(Math.random() * SECRET_MESSAGES.length)]);
-    bumpBiscuit();
-    // Quick scale pop on the break element
-    photoBreak.style.transition = 'transform 0.2s cubic-bezier(0.34,1.56,0.64,1)';
-    photoBreak.style.transform  = 'rotate(-1.2deg) scaleX(1.04) scale(1.015)';
-    setTimeout(() => {
-      photoBreak.style.transform = 'rotate(-1.2deg) scaleX(1.04) scale(1)';
-    }, 200);
-  });
-}
-
-/* ============================================================
    KONAMI CODE EASTER EGG
    ============================================================ */
 (function() {
@@ -559,10 +688,8 @@ function initPhotoBreak() {
     seq = seq.slice(-KONAMI.length);
     if (seq.join(',') === KONAMI.join(',')) {
       showToast("🍟🍟🍟 MAXIMUM FRENCH FRY MODE ACTIVATED 🍟🍟🍟");
-      document.body.style.animation = 'none';
       document.body.style.transition = 'filter 0.3s';
 
-      // Rainbow flash
       let hue = 0;
       const interval = setInterval(() => {
         document.body.style.filter = `hue-rotate(${hue}deg)`;
@@ -573,7 +700,6 @@ function initPhotoBreak() {
         }
       }, 40);
 
-      // Explosion of fries
       for (let i = 0; i < 30; i++) {
         setTimeout(() => {
           spawnSparkles(
@@ -587,7 +713,7 @@ function initPhotoBreak() {
 })();
 
 /* ============================================================
-   AMBIENT CHAOS — randomise chaos object positions on load
+   AMBIENT CHAOS — randomise on load
    ============================================================ */
 (function() {
   document.querySelectorAll('.chaos-object').forEach(el => {
@@ -597,7 +723,7 @@ function initPhotoBreak() {
 })();
 
 /* ============================================================
-   TITLE CLICK — make the title letters explode
+   TITLE CLICK — explode letters
    ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
   const titleLines = document.querySelectorAll('.title-line');
@@ -607,13 +733,10 @@ document.addEventListener('DOMContentLoaded', () => {
       line.innerHTML = chars.map(c =>
         `<span style="display:inline-block;transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1) ${Math.random()*0.2}s,opacity 0.4s;transform:translate(${(Math.random()-0.5)*80}px,${(Math.random()-0.5)*80}px) rotate(${(Math.random()-0.5)*360}deg);opacity:0">${c}</span>`
       ).join('');
-      setTimeout(() => {
-        line.innerHTML = chars.join('');
-      }, 600);
+      setTimeout(() => { line.innerHTML = chars.join(''); }, 600);
     });
   });
 
-  // Scroll progress changes nav color subtly
   window.addEventListener('scroll', () => {
     const scrolled = window.scrollY / (document.body.scrollHeight - window.innerHeight);
     document.documentElement.style.setProperty('--scroll-progress', scrolled.toString());
@@ -621,7 +744,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ============================================================
-   SNORE BUBBLE — only shows during idle
+   SNORE BUBBLE — idle detection
    ============================================================ */
 (function() {
   let idleTimer;
@@ -632,7 +755,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (snore) snore.style.opacity = '0';
     idleTimer = setTimeout(() => {
       if (snore) snore.style.opacity = '1';
-    }, 5000); // after 5 seconds of no input, start snoring
+    }, 5000);
   }
 
   document.addEventListener('mousemove', resetIdle);
