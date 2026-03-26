@@ -69,7 +69,7 @@ make down     # stop it when you're done
 
 ## The Konami Code
 
-There is an easter egg. If you know, you know. If you don't know, I'm not telling you. Ask Roo. She knows everything. She won't tell you either.
+There is an easter egg. If you know, you know. If you don't know, I'm not telling you. Ask Roo. He knows everything. He won't tell you either.
 
 Up up down down left right left right B A. That's all I'm saying. That's all anyone is saying.
 
