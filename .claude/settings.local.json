@@ -32,7 +32,8 @@
       "Bash(git -C /home/james/Downloads/french-fry-the-agent config user.email \"frenchfry@codesthings.com\")",
       "Bash(git -C /home/james/Downloads/french-fry-the-agent add .gitignore README.md)",
       "Bash(git -C /home/james/Downloads/french-fry-the-agent add -A)",
-      "Bash(git:*)"
+      "Bash(git:*)",
+      "Bash(darktable-cli /home/james/Downloads/2018-08-04_12-44-59.NEF /home/james/Downloads/french-fry-the-agent/public/iris-1.jpg --width 1600 --height 1600)"
     ]
   }
 }

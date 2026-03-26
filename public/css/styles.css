@@ -2872,3 +2872,290 @@ body:has(button:hover) .cursor-dot { width: 20px; height: 20px; background: var(
     grid-column: span 1;
   }
 }
+
+/* ============================================================
+   IRIS — Chief Experience Officer · Head of Digital Circumvention
+   12 years old. Unimpressed. More competent than Roo.
+   She would like that noted.
+   ============================================================ */
+
+:root {
+  --iris-rose:    #E040A0;
+  --iris-pink:    #F472B6;
+  --iris-violet:  #A855F7;
+  --iris-purple:  #7C3AED;
+  --iris-lilac:   #DDD6FE;
+  --iris-mauve:   #C084FC;
+  --iris-dark:    #1E0B2E;
+}
+
+/* IRIS CARD — same 2-col span as Haggis and Roo, photo-left/bio-right */
+.team-card-iris-full {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  background: linear-gradient(160deg, rgba(124,58,237,0.08) 0%, rgba(168,85,247,0.05) 50%, rgba(228,64,160,0.07) 100%);
+  border: 1.5px solid rgba(192,132,252,0.25);
+  border-radius: var(--radius-md);
+  position: relative;
+  overflow: visible;
+  box-shadow:
+    0 6px 40px rgba(168,85,247,0.14),
+    0 0 0 1px rgba(228,64,160,0.1),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  animation: iris-glow 5s ease-in-out infinite;
+}
+
+.team-card-iris-full:hover {
+  animation: none;
+  border-color: rgba(192,132,252,0.55);
+  box-shadow:
+    0 14px 56px rgba(168,85,247,0.26),
+    0 0 0 1px rgba(228,64,160,0.22),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+  transform: translateY(-5px);
+}
+
+@keyframes iris-glow {
+  0%, 100% {
+    box-shadow: 0 6px 40px rgba(168,85,247,0.14), 0 0 0 1px rgba(228,64,160,0.1), inset 0 1px 0 rgba(255,255,255,0.05);
+  }
+  50% {
+    box-shadow: 0 6px 48px rgba(168,85,247,0.22), 0 0 0 1px rgba(228,64,160,0.18), inset 0 1px 0 rgba(255,255,255,0.05);
+  }
+}
+
+/* Title strip across top — sleek, not scrawled */
+.iris-title-strip {
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, var(--iris-purple), var(--iris-rose));
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.3rem 2rem;
+  border-radius: 0 0 8px 8px;
+  z-index: 10;
+  white-space: nowrap;
+  box-shadow: 0 3px 14px rgba(124,58,237,0.45);
+}
+
+/* PHOTO GALLERY — left column */
+.iris-photo-gallery {
+  position: relative;
+  overflow: hidden;
+  background: var(--iris-dark);
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+}
+
+.iris-photo-main {
+  width: 100%;
+  flex: 1;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: opacity 0.3s ease;
+  filter: saturate(1.1) contrast(1.04);
+}
+
+.iris-thumbs {
+  display: flex;
+  gap: 3px;
+  background: #000;
+  padding: 4px;
+  flex-shrink: 0;
+}
+
+.iris-thumb {
+  flex: 1;
+  height: 56px;
+  object-fit: cover;
+  object-position: center top;
+  cursor: pointer;
+  opacity: 0.5;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  transition: opacity 0.2s, border-color 0.2s;
+}
+
+.iris-thumb:hover {
+  opacity: 0.8;
+}
+
+.iris-thumb-active {
+  opacity: 1;
+  border-color: var(--iris-rose);
+}
+
+/* Washi tape — precise angle, not chaotic like Haggis */
+.iris-photo-tape {
+  position: absolute;
+  top: 1rem;
+  left: -0.75rem;
+  background: linear-gradient(90deg, var(--iris-pink), var(--iris-mauve));
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.28rem 2.5rem;
+  transform: rotate(-2deg);
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+}
+
+.iris-status-badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 3;
+  background: rgba(168,85,247,0.15);
+  color: var(--iris-mauve);
+  border-color: rgba(168,85,247,0.35);
+}
+
+/* CARD BODY — right column */
+.iris-card-body {
+  padding: 1.6rem 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.55rem;
+}
+
+/* Name row: name + two badges in one line */
+.iris-name-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.1rem;
+}
+
+/* Iris name — clean, editorial, NOT childlike */
+.iris-name {
+  font-family: var(--font-body);
+  font-size: 2.1rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--iris-lilac);
+  text-shadow:
+    0 0 24px rgba(168,85,247,0.45),
+    0 2px 0 rgba(124,58,237,0.4);
+  line-height: 1;
+  display: inline-block;
+}
+
+/* Small inline badge — XP Officer */
+.iris-badge-xp {
+  display: inline-block;
+  padding: 0.22rem 0.7rem;
+  background: rgba(168,85,247,0.15);
+  color: var(--iris-mauve);
+  border: 1px solid rgba(168,85,247,0.35);
+  border-radius: var(--radius-xl);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* The 🖕 badge — a bit bolder, rose-tinted */
+.iris-badge-fp {
+  display: inline-block;
+  padding: 0.22rem 0.7rem;
+  background: rgba(228,64,160,0.12);
+  color: var(--iris-pink);
+  border: 1px solid rgba(228,64,160,0.3);
+  border-radius: var(--radius-xl);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.iris-title {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--iris-mauve);
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+/* Her quote — sleek pull-quote, not a scrawl */
+.iris-quote {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-style: italic;
+  font-weight: 700;
+  color: var(--iris-lilac);
+  background: rgba(124,58,237,0.1);
+  border-left: 3px solid var(--iris-rose);
+  border-radius: 0 6px 6px 0;
+  padding: 0.55rem 0.85rem;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+.iris-desc {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: rgba(255,251,240,0.75);
+}
+
+/* Iris tags — purple/rose palette */
+.iris-tags {
+  margin-top: 0.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.iris-tag {
+  background: rgba(168,85,247,0.1);
+  color: var(--iris-mauve);
+  border-color: rgba(168,85,247,0.25);
+}
+
+.iris-tag:nth-child(even) {
+  background: rgba(228,64,160,0.09);
+  color: var(--iris-pink);
+  border-color: rgba(228,64,160,0.25);
+}
+
+/* Responsive — stack like Haggis and Roo */
+@media (max-width: 900px) {
+  .team-card-iris-full {
+    grid-column: span 1;
+    grid-template-columns: 1fr;
+  }
+  .iris-photo-gallery {
+    min-height: 240px;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+  }
+  .iris-title-strip {
+    font-size: 0.55rem;
+    padding: 0.28rem 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .team-card-iris-full {
+    grid-column: span 1;
+  }
+}
