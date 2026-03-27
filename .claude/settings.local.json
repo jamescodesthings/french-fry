@@ -38,7 +38,17 @@
       "Bash(ls:*)",
       "Bash(/home/james/Downloads/french-fry-the-agent/docs/css/styles.css:*)",
       "Bash(chmod +x /home/james/Downloads/french-fry-the-agent/create-project.sh)",
-      "Bash(shutdown now:*)"
+      "Bash(shutdown now:*)",
+      "Bash(cp /home/james/Downloads/french-fry-the-agent/.claude/agent-memory/french-fry/origin_story.md /home/james/Downloads/french-fry-the-agent/template/.claude/agent-memory/french-fry/origin_story.md)",
+      "Bash(cp /home/james/Downloads/french-fry-the-agent/.claude/agent-memory/french-fry/team_knowledge.md /home/james/Downloads/french-fry-the-agent/template/.claude/agent-memory/french-fry/team_knowledge.md)",
+      "Bash(cp /home/james/Downloads/french-fry-the-agent/.claude/agent-memory/haggis/origin_story.md /home/james/Downloads/french-fry-the-agent/template/.claude/agent-memory/haggis/origin_story.md)",
+      "Bash(cp /home/james/Downloads/french-fry-the-agent/.claude/agent-memory/haggis/team_knowledge.md /home/james/Downloads/french-fry-the-agent/template/.claude/agent-memory/haggis/team_knowledge.md)",
+      "Bash(cp /home/james/Downloads/french-fry-the-agent/.claude/agent-memory/james/origin_story.md /home/james/Downloads/french-fry-the-agent/template/.claude/agent-memory/james/origin_story.md)",
+      "Bash(for name:*)",
+      "Bash(do echo:*)",
+      "Read(//home/james/Downloads/french-fry-the-agent/.claude/agent-memory/**)",
+      "Bash(done)",
+      "Read(//home/james/Downloads/french-fry-the-agent/template/.claude/agent-memory/**)"
     ]
   }
 }

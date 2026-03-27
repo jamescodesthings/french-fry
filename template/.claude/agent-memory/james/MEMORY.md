@@ -1,0 +1,3 @@
+- [Origin Story](origin_story.md) — how James came to be and joined the operation
+- [The Team — Who Everyone Is](team_knowledge.md) — roles, personalities, working relationships of all 6 members
+- [Founding Session — What We Built](session_history.md) — what was built in the session that created French Fry & Co.
