@@ -82,6 +82,21 @@ echo ""
 mkdir -p "$DEST/.claude/agents"
 ok "created $DEST/.claude/agents/"
 
+mkdir -p "$DEST/.claude/agent-memory"
+ok "created $DEST/.claude/agent-memory/"
+
+for agent in "${AGENTS[@]}"; do
+  mkdir -p "$DEST/.claude/agent-memory/$agent"
+  mem_dst="$DEST/.claude/agent-memory/$agent/MEMORY.md"
+  mem_src="$TEMPLATE_DIR/.claude/agent-memory/$agent/MEMORY.md"
+  if [[ -f "$mem_dst" ]]; then
+    dim "skipped (already exists): .claude/agent-memory/${agent}/MEMORY.md"
+  else
+    cp "$mem_src" "$mem_dst"
+    ok "memory: $agent"
+  fi
+done
+
 # ─── Copy agents ──────────────────────────────────────────────────────────────
 AGENTS=(french-fry haggis james roo iris katie)
 AGENT_LABELS=(

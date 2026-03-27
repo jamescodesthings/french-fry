@@ -1,0 +1,2 @@
+- [James — user profile](user_james.md) — James Macmillan, senior dev, TypeScript/React/Rust etc., partner of Katie, dad to Iris and Roo, owner of French Fry and Haggis
+- [French Fry & Co. site](project_site.md) — team showcase microsite, 6 members, dark/neon, French Fry narrates, chaos is the point
