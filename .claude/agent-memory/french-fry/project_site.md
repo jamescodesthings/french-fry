@@ -14,7 +14,7 @@ The site is French Fry & Co. — a team showcase microsite with dark/neon visual
 - Katie — teal/brown. CCO. Mum. Partner of James. Oodie. Chocolate. Already spotted two problems.
 - James — blue. Senior dev. TypeScript/React/Rust etc. Tolerated. Made biscuits.
 
-**Architecture:** public/index.html, public/css/styles.css, public/js/main.js. Express serves from public/. Dockerfile + docker-compose. Port 3000.
+**Architecture:** docs/index.html, docs/css/styles.css, docs/js/main.js. Express serves from docs/. Dockerfile + docker-compose. Port 3000.
 
 **Why:** personal/portfolio project with maximum personality. Not a serious agency site. Chaos is the point.
 

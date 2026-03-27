@@ -92,7 +92,7 @@ Up up down down left right left right B A. That's all I'm saying. That's all any
 ├── Dockerfile          # Containerises the whole operation
 ├── docker-compose.yml  # One service. Port 3000. Done.
 ├── Makefile            # All the commands you need
-└── public/             # The actual website. My face is in here.
+└── docs/             # The actual website. My face is in here.
     ├── index.html
     ├── css/styles.css
     └── js/main.js

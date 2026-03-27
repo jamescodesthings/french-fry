@@ -13,7 +13,7 @@ This document captures the full arc of a single Claude Code session that built t
 
 **User prompt:** *"Use french-fry to create french-fry's personal portfolio, full of chaos and madness, fun and joy, make sure it oozes your personality"*
 
-The `french-fry` agent was invoked to build a static HTML/CSS/JS portfolio site served from `public/` via the existing Express server. The agent delivered:
+The `french-fry` agent was invoked to build a static HTML/CSS/JS portfolio site served from `docs/` via the existing Express server. The agent delivered:
 
 - A CSS-drawn animated bulldog face in the hero that tracks the mouse, sticks its tongue out on hover, and flaps its ears on click
 - Rotating hero taglines (12 options, 4-second intervals)
@@ -35,7 +35,7 @@ The `french-fry` agent was invoked to build a static HTML/CSS/JS portfolio site 
 
 - `WebFetch` was used to retrieve the image URL from the ViewBug page
 - Image identified as `102944984_large1600.jpg` — "French Fry, the Freelance Bulldog"
-- Downloaded via `curl` to `public/french-fry.jpg`
+- Downloaded via `curl` to `docs/french-fry.jpg`
 - Added to the About section inside an about-card, with gold border, tilt-on-hover, saturation filter, and caption: *"this is my professional headshot. i was not consulted."*
 
 **Follow-up prompt:** *"it ain't look right; it's kind of inside an about card dangling on the left of the page"*
